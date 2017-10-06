@@ -1,0 +1,26 @@
+{
+  "name": "placeholder",
+  "version": "0.0.0",
+  "description": "dynamic style guides",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bcrebel/placeholder.git"
+  },
+  "author": "Carron White",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bcrebel/placeholder/issues"
+  },
+  "homepage": "https://github.com/bcrebel/placeholder#readme",
+  "dependencies": {
+    "scss-parser": "^1.0.0"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "nodemon": "^1.12.1"
+  }
+}

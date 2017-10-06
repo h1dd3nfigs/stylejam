@@ -1,0 +1,590 @@
+// ============================================================================
+//   Variables - Cosmo
+// ============================================================================
+
+// Site Asset Path
+// -------------------------------------------------------
+$siteAssetPath: "/sites/cosmopolitan/assets/";
+
+// Colors
+// -------------------------------------------------------
+$color-base-pink: #E9328C;
+
+// Color Palettes
+// -------------------------------------------------------
+$palettes: (
+	black: (
+		base: #000000,
+		tranmed: transparentize( palette( black ), 0.5 )
+	),
+
+	white: (
+		base: #FFFFFF,
+		tranlight: transparentize( palette( white ), 0.8 )
+	),
+
+	grey: (
+		base: $color-base-grey,
+		xxxlight: lighten($color-base-grey,24%),
+		xxlight: lighten($color-base-grey, 17%),
+		xlight: lighten($color-base-grey, 15%),
+		light: lighten($color-base-grey, 12%),
+		medlight: lighten($color-base-grey, 9%),
+		medmedium: darken($color-base-grey, 2%),
+		medium: darken($color-base-grey, 18%),
+		dark: darken($color-base-grey, 32%),
+		xdark: darken($color-base-grey, 40%),
+		xxdark: darken($color-base-grey, 55%),
+		xxxdark: darken($color-base-grey, 63%)
+	),
+
+	pink: (
+		base: $color-base-pink,
+		xlight: lighten($color-base-pink, 17%),
+		light: lighten($color-base-pink, 12%),
+		medium: darken($color-base-pink, 18%),
+		dark: darken($color-base-pink, 22%)
+	),
+
+	blue: (
+		base: #00008D
+	),
+
+	teal: (
+		base: #01FFFF
+	),
+
+	yellow: (
+		base: #FEF035,
+		tranmed: transparentize( palette( yellow ), 0.05 )
+	),
+
+	purple: (
+		base: #FD4CFC
+	),
+
+	green: (
+		base: #35B763
+	),
+
+	red: (
+		base: #FF4C49
+	),
+);
+
+// Borders
+// -------------------------------------------------------
+$border-thin-black: 0.1875rem solid palette( black );
+$border-thin-white: 0.1875rem solid palette( white );
+$border-thin-pink: 0.1875rem solid palette( pink );
+
+// Lazy Element Background Color
+// -------------------------------------------------------
+$color-bg-lazy: palette( grey, xlight );
+
+// Nav
+// -------------------------------------------------------
+$color-bg-nav: (
+	color: palette( white )
+);
+
+// Side panel
+// -------------------------------------------------------
+$gradient-sidepanel: ( palette( pink ), palette( pink, xlight ) );
+$color-bg-sidepanel: (
+	color: transparent,
+	gradient: ( colors: $gradient-sidepanel )
+);
+$color-bg-sidepanel-submenu: (
+	color: transparent,
+	gradient: ( colors: $gradient-sidepanel, direction: unquote( "to top" ) )
+);
+
+// Search Overlay
+// -------------------------------------------------------
+$color-bg-search-overlay: (
+	color: rgba( 0, 0, 0, 0.9)
+);
+
+// Feed Pages
+// -------------------------------------------------------
+$margin-bottom-ad-full-item-image: $margin-s;
+$margin-full-item-metadata-spacing: 0;
+$margin-bottom-ad-full-item-metadata: 0.75rem;
+
+// full item border - displays tablet and up on feed items
+@mixin full-item-border() { // SASS Linter needs an update in these cases cause null and still error
+
+	&:first-child {
+		border-top: 0;
+	}
+}
+
+// Collection Breaker
+$transform-collection-breaker-item-title: translate( 0, -$margin-l );
+
+// Newsletter Breaker
+$color-bg-newsletter-outer: $color-bg-curated-breaker-header;
+$margin-newsletter-title-dek: 0 0 $margin-xs;
+$border-newsletter: $border-dotted-dark;
+
+// Grid List Feed
+$gradient-grid-list-feed: ( rgba(255, 255, 255, 0 ), palette( white ) );
+
+// Footer
+// -------------------------------------------------------
+$position-top-footer-social-menu: 3.125rem;
+$color-bg-footer: (
+	color: palette( white )
+);
+
+// Social Buttons
+// -------------------------------------------------------
+$icon-size-social-button: $icon-size-xs;
+$icon-size-full-item-social-button: $icon-size-xxs;
+
+
+// Embeds
+// -------------------------------------------------------
+
+// Related Content
+$border-related-content: $border-thickness-thin dotted palette( grey, medlight );
+
+// Ratings
+$color-embed-rating-icon: palette( pink );
+
+// Youtube Playlist
+$youtube-playlist-arrow-button-bg: palette( pink );
+$youtube-playlist-arrow-button-bg-hover: transparentize( palette( pink ), 0.25 );
+$youtube-playlist-arrow-color: palette( white );
+
+// Gallery Slideshow
+// -------------------------------------------------------
+// NOTE: still necessary after moving sponsors back to content header???
+$color-bg-sponsor-gallery: palette( grey, xxlight );
+
+// Longform
+// -------------------------------------------------------
+$margin-bottom-longform-header: $margin-xxs;
+
+
+// Quiz
+// -------------------------------------------------------
+$color-valid: palette( green );
+$color-error: palette( red );
+$quiz-background: (
+	color: palette( grey, xxlight ),
+	image: url( "#{$siteAssetPath}/images/patterns/bg-tiny-stripes-white.png" )
+);
+$gallery-button-background: (
+	color: palette( black )
+);
+
+// Image Copyright
+$image-copyright-credit-delimiter: " / ";
+
+// Embedded Gallery Module
+$thumbnail-arrow-width: rem( 28px );
+$thumbnail-image-margin-right: $margin-xxs;
+
+// Font Stacks
+// @@ Note: font-size is pixel value that gets converted into rems through the mixin @@
+// @@ Note: line-height value should be a multiplier @@
+// -------------------------------------------------------
+$font-trivia: (
+	stack: '"TriviaSerif", Georgia, Times, Serif',
+	10: (
+		font-size: 10,
+		line-height: 1
+	),
+	12: (
+		font-size: 12,
+		line-height: 1
+	),
+	14: (
+		font-size: 14,
+		line-height: 1
+	),
+	15: (
+		font-size: 15,
+		line-height: 1
+	),
+	16: (
+		font-size: 16,
+		line-height: 1
+	),
+	18: (
+		font-size: 18,
+		line-height: 1.4
+	),
+	20: (
+		font-size: 20,
+		line-height: 1.4
+	),
+	21: (
+		font-size: 21,
+		line-height: 1.2
+	),
+	24: (
+		font-size: 24,
+		line-height: 1.2
+	),
+	26: (
+		font-size: 26,
+		line-height: 1.2
+	),
+	27: (
+		font-size: 27,
+		line-height: 1
+	),
+	28: (
+		font-size: 28,
+		line-height: 1.2
+	),
+	30: (
+		font-size: 30,
+		line-height: 1.1
+	),
+	31: (
+		font-size: 31,
+		line-height: 1
+	),
+	32: (
+		font-size: 32,
+		line-height: 1
+	),
+	35: (
+		font-size: 35,
+		line-height: 1.2
+	),
+	36: (
+		font-size: 36,
+		line-height: 1.2
+	),
+	37: (
+		font-size: 37,
+		line-height: 1
+	),
+	40: (
+		font-size: 40,
+		line-height: 1.1
+	),
+	46: (
+		font-size: 46,
+		line-height: 1.3
+	),
+	48: (
+		font-size: 48,
+		line-height: 1
+	),
+	50: (
+		font-size: 50,
+		line-height: 1
+	),
+	52: (
+		font-size: 52,
+		line-height: 1
+	),
+	53: (
+		font-size: 53,
+		line-height: 1.3
+	),
+	56: (
+		font-size: 56,
+		line-height: 1.1
+	),
+	59: (
+		font-size: 59,
+		line-height: 1
+	),
+	60: (
+		font-size: 60,
+		line-height: 1
+	),
+	68: (
+		font-size: 68,
+		line-height: 1
+	),
+	72: (
+		font-size: 72,
+		line-height: 1
+	),
+	76: (
+		font-size: 76,
+		line-height: 1
+	),
+	80: (
+		font-size: 80,
+		line-height: 1
+	),
+	90: (
+		font-size: 90,
+		line-height: 1
+	),
+	124: (
+		font-size: 124,
+		line-height: 1.1
+	)
+);
+
+$font-sofia: (
+	stack: '"Sofia", Helvetica, Arial, Sans-serif',
+	9: (
+		font-size: 9,
+		line-height: 1.5
+	),
+	10: (
+		font-size: 10,
+		line-height: 1.5
+	),
+	12: (
+		font-size: 12,
+		line-height: 1
+	),
+	14: (
+		font-size: 14,
+		line-height: 1.4
+	),
+	15: (
+		font-size: 15,
+		line-height: 1.4
+	),
+	16: (
+		font-size: 16,
+		line-height: 1.3
+	),
+	17: (
+		font-size: 17,
+		line-height: 1.4
+	),
+	18: (
+		font-size: 18,
+		line-height: 1.2
+	),
+	20: (
+		font-size: 20,
+		line-height: 1.2
+	),
+	22: (
+		font-size: 22,
+		line-height: 1.1
+	),
+	24: (
+		font-size: 24,
+		line-height: 1.3
+	),
+	26: (
+		font-size: 26,
+		line-height: 1.3
+	),
+	28: (
+		font-size: 28,
+		line-height: 1.3
+	),
+	32: (
+		font-size: 32,
+		line-height: 1.1
+	),
+	36: (
+		font-size: 36,
+		line-height: 1.1
+	),
+	38: (
+		font-size: 38,
+		line-height: 1.1
+	),
+	42: (
+		font-size: 42,
+		line-height: 1.1
+	),
+	50: (
+		font-size: 50,
+		line-height: 1.1
+	),
+	60: (
+		font-size: 60,
+		line-height: 1
+	),
+	86: (
+		font-size: 86,
+		line-height: 1
+	),
+	94: (
+		font-size: 94,
+		line-height: 1
+	)
+);
+
+$font-helvetica: (
+	stack: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+	11: (
+		font-size: 11,
+		line-height: 1.3
+	),
+	12: (
+		font-size: 12,
+		line-height: 1.5
+	),
+	14: (
+		font-size: 14,
+		line-height: 1.2
+	),
+	15: (
+		font-size: 15,
+		line-height: 1.5
+	),
+	16: (
+		font-size: 16,
+		line-height: 1.6
+	),
+	17: (
+		font-size: 17,
+		line-height: 1.8
+	),
+	20: (
+		font-size: 20,
+		line-height: 0
+	)
+);
+
+// Common Font Styles
+// NOTE: Reserved only for variation files that repeat type styles
+
+$color-text-headline: palette( black );
+$letter-spacing-headline: -0.03rem;
+$letter-spacing-tight: -0.05rem;
+$letter-spacing-wide: 0.15rem;
+
+// Body
+// -------------------------------------------------------
+%site-background {
+	background: palette( white );
+}
+
+%type-body-text {
+	@include type-style( $font-helvetica, 17 );
+	color: $color-text-headline;
+	letter-spacing: 0.02em;
+	-webkit-font-smoothing: antialiased;
+}
+
+// Headlines
+// -------------------------------------------------------
+%type-headline {
+	$alt-size-map: (
+		$breakpoint-mobile-wide: 40,
+		$breakpoint-tablet: 48,
+		$breakpoint-desktop: 56
+	);
+	@include type-style( $font-trivia, 30, $alt-size-map );
+	color: $color-text-headline;
+	letter-spacing: $letter-spacing-headline;
+	font-weight: normal;
+}
+
+// Link Text Placeholder
+// -------------------------------------------------------
+// main link style
+%link-text-base {
+	text-decoration: none;
+	transition: color 0.3s ease-in-out;
+
+	@include respond-to( $breakpoint-desktop ) {
+		&:hover {
+			color: palette( pink );
+		}
+	}
+}
+
+// Body Link Styles
+%link-text-body {
+	transition: color 0.3s ease-in-out;
+	color: palette( grey, xdark );
+	text-decoration: underline;
+
+	@include respond-to( $breakpoint-desktop ) {
+		&:hover {
+			color: palette( black );
+		}
+	}
+}
+
+// Trivia Link with stroke
+%link-text-w-stroke {
+	text-decoration: none;
+	transition: color 0.3s ease-in-out, text-stroke 0.3s ease-in-out;
+
+	@include respond-to( $breakpoint-desktop ) {
+		&:hover {
+			color: palette( pink );
+			-webkit-text-stroke: 0.01rem palette( pink );
+		}
+	}
+}
+
+// Content Info
+// -------------------------------------------------------
+%type-content-info {
+	@include type-style( $font-sofia, 14 );
+	color: palette( black );
+}
+
+// Publish Date
+// -------------------------------------------------------
+%type-list-feed-item-metadata {
+	@include type-style( $font-sofia, 12 );
+	color: palette( black );
+}
+
+// Global Byline Variations
+// -------------------------------------------------------
+%byline-global-variation {
+	@include type-style( $font-sofia, 14 );
+	color: palette( grey, xdark );
+}
+
+%byline-name-global-variation {
+	color: palette( grey, xdark );
+	text-transform: capitalize;
+}
+
+// Global hr Variations
+// -------------------------------------------------------
+%hr-global-variation {
+	width: col-width( 3, $col-gutter: 0 );
+	border-top: 0.1875rem solid palette( black );
+	border-right: 0;
+	border-left: 0;
+	border-bottom: 0;
+	padding: $margin-s 0 $margin-xxs;
+}
+
+// Item Image Hover
+// -------------------------------------------------------
+$gradient-image-hover: ( transparent, palette( white, tranlight ) );
+
+%item-image-hover {
+	@include respond-to( $breakpoint-desktop ) {
+		position: relative;
+
+		&:after {
+			@include background-gradient( $gradient-image-hover, "to right" );
+			position: absolute;
+			top: 0;
+			left: -75%;
+			z-index: 2;
+			display: block;
+			content: "";
+			width: 50%;
+			height: 100%;
+			transform: skewX( -25deg );
+		}
+
+		&:hover {
+
+			&:after {
+				animation: shine 0.95s;
+			}
+		}
+	}
+}

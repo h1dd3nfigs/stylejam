@@ -1,0 +1,17 @@
+$palettes: (
+	black: (
+		base: #000000,
+		tranmed: transparentize( palette( black ), 0.5 )
+	),
+
+	white: (
+		base: #FFFFFF,
+		tranlight: transparentize( palette( white ), 0.8 )
+	)
+);
+
+// Newsletter Breaker
+$color-bg-newsletter-outer: $color-bg-curated-breaker-header;
+$margin-newsletter-title-dek: 0 0 $margin-xs;
+$border-newsletter: $border-dotted-dark;
+
