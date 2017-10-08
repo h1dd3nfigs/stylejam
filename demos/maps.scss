@@ -1,0 +1,1002 @@
+@if (type-of(#000000) == color) {
+	.palettes:black:base {
+  	background-color: #000000;
+  }
+}
+
+@if (type-of(transparentize( palette( black ), 0.5 )) == color) {
+	.palettes:black:tranmed {
+  	background-color: transparentize( palette( black ), 0.5 );
+  }
+}
+
+@if (type-of(#FFFFFF) == color) {
+	.palettes:white:base {
+  	background-color: #FFFFFF;
+  }
+}
+
+@if (type-of(transparentize( palette( white ), 0.8 )) == color) {
+	.palettes:white:tranlight {
+  	background-color: transparentize( palette( white ), 0.8 );
+  }
+}
+
+@if (type-of($color-base-grey) == color) {
+	.palettes:grey:base {
+  	background-color: $color-base-grey;
+  }
+}
+
+@if (type-of(lighten($color-base-grey,24%)) == color) {
+	.palettes:grey:xxxlight {
+  	background-color: lighten($color-base-grey,24%);
+  }
+}
+
+@if (type-of(lighten($color-base-grey, 17%)) == color) {
+	.palettes:grey:xxlight {
+  	background-color: lighten($color-base-grey, 17%);
+  }
+}
+
+@if (type-of(lighten($color-base-grey, 15%)) == color) {
+	.palettes:grey:xlight {
+  	background-color: lighten($color-base-grey, 15%);
+  }
+}
+
+@if (type-of(lighten($color-base-grey, 12%)) == color) {
+	.palettes:grey:light {
+  	background-color: lighten($color-base-grey, 12%);
+  }
+}
+
+@if (type-of(lighten($color-base-grey, 9%)) == color) {
+	.palettes:grey:medlight {
+  	background-color: lighten($color-base-grey, 9%);
+  }
+}
+
+@if (type-of(darken($color-base-grey, 2%)) == color) {
+	.palettes:grey:medmedium {
+  	background-color: darken($color-base-grey, 2%);
+  }
+}
+
+@if (type-of(darken($color-base-grey, 18%)) == color) {
+	.palettes:grey:medium {
+  	background-color: darken($color-base-grey, 18%);
+  }
+}
+
+@if (type-of(darken($color-base-grey, 32%)) == color) {
+	.palettes:grey:dark {
+  	background-color: darken($color-base-grey, 32%);
+  }
+}
+
+@if (type-of(darken($color-base-grey, 40%)) == color) {
+	.palettes:grey:xdark {
+  	background-color: darken($color-base-grey, 40%);
+  }
+}
+
+@if (type-of(darken($color-base-grey, 55%)) == color) {
+	.palettes:grey:xxdark {
+  	background-color: darken($color-base-grey, 55%);
+  }
+}
+
+@if (type-of(darken($color-base-grey, 63%)) == color) {
+	.palettes:grey:xxxdark {
+  	background-color: darken($color-base-grey, 63%);
+  }
+}
+
+@if (type-of($color-base-pink) == color) {
+	.palettes:pink:base {
+  	background-color: $color-base-pink;
+  }
+}
+
+@if (type-of(lighten($color-base-pink, 17%)) == color) {
+	.palettes:pink:xlight {
+  	background-color: lighten($color-base-pink, 17%);
+  }
+}
+
+@if (type-of(lighten($color-base-pink, 12%)) == color) {
+	.palettes:pink:light {
+  	background-color: lighten($color-base-pink, 12%);
+  }
+}
+
+@if (type-of(darken($color-base-pink, 18%)) == color) {
+	.palettes:pink:medium {
+  	background-color: darken($color-base-pink, 18%);
+  }
+}
+
+@if (type-of(darken($color-base-pink, 22%)) == color) {
+	.palettes:pink:dark {
+  	background-color: darken($color-base-pink, 22%);
+  }
+}
+
+@if (type-of(#00008D) == color) {
+	.palettes:blue:base {
+  	background-color: #00008D;
+  }
+}
+
+@if (type-of(#01FFFF) == color) {
+	.palettes:teal:base {
+  	background-color: #01FFFF;
+  }
+}
+
+@if (type-of(#FEF035) == color) {
+	.palettes:yellow:base {
+  	background-color: #FEF035;
+  }
+}
+
+@if (type-of(transparentize( palette( yellow ), 0.05 )) == color) {
+	.palettes:yellow:tranmed {
+  	background-color: transparentize( palette( yellow ), 0.05 );
+  }
+}
+
+@if (type-of(#FD4CFC) == color) {
+	.palettes:purple:base {
+  	background-color: #FD4CFC;
+  }
+}
+
+@if (type-of(#35B763) == color) {
+	.palettes:green:base {
+  	background-color: #35B763;
+  }
+}
+
+@if (type-of(#FF4C49) == color) {
+	.palettes:red:base {
+  	background-color: #FF4C49;
+  }
+}
+
+@if (type-of(palette( white )) == color) {
+	.color-bg-nav:color {
+  	background-color: palette( white );
+  }
+}
+
+@if (type-of(transparent) == color) {
+	.color-bg-sidepanel:color {
+  	background-color: transparent;
+  }
+}
+
+@if (type-of($gradient-sidepanel) == color) {
+	.color-bg-sidepanel:gradient:colors {
+  	background-color: $gradient-sidepanel;
+  }
+}
+
+@if (type-of(transparent) == color) {
+	.color-bg-sidepanel-submenu:color {
+  	background-color: transparent;
+  }
+}
+
+@if (type-of($gradient-sidepanel) == color) {
+	.color-bg-sidepanel-submenu:gradient:colors {
+  	background-color: $gradient-sidepanel;
+  }
+}
+
+@if (type-of(unquote( "to top" )) == color) {
+	.color-bg-sidepanel-submenu:gradient:direction {
+  	background-color: unquote( "to top" );
+  }
+}
+
+@if (type-of(rgba( 0, 0, 0, 0.9)) == color) {
+	.color-bg-search-overlay:color {
+  	background-color: rgba( 0, 0, 0, 0.9);
+  }
+}
+
+@if (type-of(palette( white )) == color) {
+	.color-bg-footer:color {
+  	background-color: palette( white );
+  }
+}
+
+@if (type-of(palette( grey, xxlight )) == color) {
+	.quiz-background:color {
+  	background-color: palette( grey, xxlight );
+  }
+}
+
+@if (type-of(url( "#{$siteAssetPath}/images/patterns/bg-tiny-stripes-white.png" )) == color) {
+	.quiz-background:image {
+  	background-color: url( "#{$siteAssetPath}/images/patterns/bg-tiny-stripes-white.png" );
+  }
+}
+
+@if (type-of(palette( black )) == color) {
+	.gallery-button-background:color {
+  	background-color: palette( black );
+  }
+}
+
+@if (type-of('"TriviaSerif", Georgia, Times, Serif') == color) {
+	.font-trivia:stack {
+  	background-color: '"TriviaSerif", Georgia, Times, Serif';
+  }
+}
+
+@if (type-of(10) == color) {
+	.font-trivia:10:font-size {
+  	background-color: 10;
+  }
+}
+
+@if (type-of(1) == color) {
+	.font-trivia:10:line-height {
+  	background-color: 1;
+  }
+}
+
+@if (type-of(12) == color) {
+	.font-trivia:12:font-size {
+  	background-color: 12;
+  }
+}
+
+@if (type-of(1) == color) {
+	.font-trivia:12:line-height {
+  	background-color: 1;
+  }
+}
+
+@if (type-of(14) == color) {
+	.font-trivia:14:font-size {
+  	background-color: 14;
+  }
+}
+
+@if (type-of(1) == color) {
+	.font-trivia:14:line-height {
+  	background-color: 1;
+  }
+}
+
+@if (type-of(15) == color) {
+	.font-trivia:15:font-size {
+  	background-color: 15;
+  }
+}
+
+@if (type-of(1) == color) {
+	.font-trivia:15:line-height {
+  	background-color: 1;
+  }
+}
+
+@if (type-of(16) == color) {
+	.font-trivia:16:font-size {
+  	background-color: 16;
+  }
+}
+
+@if (type-of(1) == color) {
+	.font-trivia:16:line-height {
+  	background-color: 1;
+  }
+}
+
+@if (type-of(18) == color) {
+	.font-trivia:18:font-size {
+  	background-color: 18;
+  }
+}
+
+@if (type-of(1.4) == color) {
+	.font-trivia:18:line-height {
+  	background-color: 1.4;
+  }
+}
+
+@if (type-of(20) == color) {
+	.font-trivia:20:font-size {
+  	background-color: 20;
+  }
+}
+
+@if (type-of(1.4) == color) {
+	.font-trivia:20:line-height {
+  	background-color: 1.4;
+  }
+}
+
+@if (type-of(21) == color) {
+	.font-trivia:21:font-size {
+  	background-color: 21;
+  }
+}
+
+@if (type-of(1.2) == color) {
+	.font-trivia:21:line-height {
+  	background-color: 1.2;
+  }
+}
+
+@if (type-of(24) == color) {
+	.font-trivia:24:font-size {
+  	background-color: 24;
+  }
+}
+
+@if (type-of(1.2) == color) {
+	.font-trivia:24:line-height {
+  	background-color: 1.2;
+  }
+}
+
+@if (type-of(26) == color) {
+	.font-trivia:26:font-size {
+  	background-color: 26;
+  }
+}
+
+@if (type-of(1.2) == color) {
+	.font-trivia:26:line-height {
+  	background-color: 1.2;
+  }
+}
+
+@if (type-of(27) == color) {
+	.font-trivia:27:font-size {
+  	background-color: 27;
+  }
+}
+
+@if (type-of(1) == color) {
+	.font-trivia:27:line-height {
+  	background-color: 1;
+  }
+}
+
+@if (type-of(28) == color) {
+	.font-trivia:28:font-size {
+  	background-color: 28;
+  }
+}
+
+@if (type-of(1.2) == color) {
+	.font-trivia:28:line-height {
+  	background-color: 1.2;
+  }
+}
+
+@if (type-of(30) == color) {
+	.font-trivia:30:font-size {
+  	background-color: 30;
+  }
+}
+
+@if (type-of(1.1) == color) {
+	.font-trivia:30:line-height {
+  	background-color: 1.1;
+  }
+}
+
+@if (type-of(31) == color) {
+	.font-trivia:31:font-size {
+  	background-color: 31;
+  }
+}
+
+@if (type-of(1) == color) {
+	.font-trivia:31:line-height {
+  	background-color: 1;
+  }
+}
+
+@if (type-of(32) == color) {
+	.font-trivia:32:font-size {
+  	background-color: 32;
+  }
+}
+
+@if (type-of(1) == color) {
+	.font-trivia:32:line-height {
+  	background-color: 1;
+  }
+}
+
+@if (type-of(35) == color) {
+	.font-trivia:35:font-size {
+  	background-color: 35;
+  }
+}
+
+@if (type-of(1.2) == color) {
+	.font-trivia:35:line-height {
+  	background-color: 1.2;
+  }
+}
+
+@if (type-of(36) == color) {
+	.font-trivia:36:font-size {
+  	background-color: 36;
+  }
+}
+
+@if (type-of(1.2) == color) {
+	.font-trivia:36:line-height {
+  	background-color: 1.2;
+  }
+}
+
+@if (type-of(37) == color) {
+	.font-trivia:37:font-size {
+  	background-color: 37;
+  }
+}
+
+@if (type-of(1) == color) {
+	.font-trivia:37:line-height {
+  	background-color: 1;
+  }
+}
+
+@if (type-of(40) == color) {
+	.font-trivia:40:font-size {
+  	background-color: 40;
+  }
+}
+
+@if (type-of(1.1) == color) {
+	.font-trivia:40:line-height {
+  	background-color: 1.1;
+  }
+}
+
+@if (type-of(46) == color) {
+	.font-trivia:46:font-size {
+  	background-color: 46;
+  }
+}
+
+@if (type-of(1.3) == color) {
+	.font-trivia:46:line-height {
+  	background-color: 1.3;
+  }
+}
+
+@if (type-of(48) == color) {
+	.font-trivia:48:font-size {
+  	background-color: 48;
+  }
+}
+
+@if (type-of(1) == color) {
+	.font-trivia:48:line-height {
+  	background-color: 1;
+  }
+}
+
+@if (type-of(50) == color) {
+	.font-trivia:50:font-size {
+  	background-color: 50;
+  }
+}
+
+@if (type-of(1) == color) {
+	.font-trivia:50:line-height {
+  	background-color: 1;
+  }
+}
+
+@if (type-of(52) == color) {
+	.font-trivia:52:font-size {
+  	background-color: 52;
+  }
+}
+
+@if (type-of(1) == color) {
+	.font-trivia:52:line-height {
+  	background-color: 1;
+  }
+}
+
+@if (type-of(53) == color) {
+	.font-trivia:53:font-size {
+  	background-color: 53;
+  }
+}
+
+@if (type-of(1.3) == color) {
+	.font-trivia:53:line-height {
+  	background-color: 1.3;
+  }
+}
+
+@if (type-of(56) == color) {
+	.font-trivia:56:font-size {
+  	background-color: 56;
+  }
+}
+
+@if (type-of(1.1) == color) {
+	.font-trivia:56:line-height {
+  	background-color: 1.1;
+  }
+}
+
+@if (type-of(59) == color) {
+	.font-trivia:59:font-size {
+  	background-color: 59;
+  }
+}
+
+@if (type-of(1) == color) {
+	.font-trivia:59:line-height {
+  	background-color: 1;
+  }
+}
+
+@if (type-of(60) == color) {
+	.font-trivia:60:font-size {
+  	background-color: 60;
+  }
+}
+
+@if (type-of(1) == color) {
+	.font-trivia:60:line-height {
+  	background-color: 1;
+  }
+}
+
+@if (type-of(68) == color) {
+	.font-trivia:68:font-size {
+  	background-color: 68;
+  }
+}
+
+@if (type-of(1) == color) {
+	.font-trivia:68:line-height {
+  	background-color: 1;
+  }
+}
+
+@if (type-of(72) == color) {
+	.font-trivia:72:font-size {
+  	background-color: 72;
+  }
+}
+
+@if (type-of(1) == color) {
+	.font-trivia:72:line-height {
+  	background-color: 1;
+  }
+}
+
+@if (type-of(76) == color) {
+	.font-trivia:76:font-size {
+  	background-color: 76;
+  }
+}
+
+@if (type-of(1) == color) {
+	.font-trivia:76:line-height {
+  	background-color: 1;
+  }
+}
+
+@if (type-of(80) == color) {
+	.font-trivia:80:font-size {
+  	background-color: 80;
+  }
+}
+
+@if (type-of(1) == color) {
+	.font-trivia:80:line-height {
+  	background-color: 1;
+  }
+}
+
+@if (type-of(90) == color) {
+	.font-trivia:90:font-size {
+  	background-color: 90;
+  }
+}
+
+@if (type-of(1) == color) {
+	.font-trivia:90:line-height {
+  	background-color: 1;
+  }
+}
+
+@if (type-of(124) == color) {
+	.font-trivia:124:font-size {
+  	background-color: 124;
+  }
+}
+
+@if (type-of(1.1) == color) {
+	.font-trivia:124:line-height {
+  	background-color: 1.1;
+  }
+}
+
+@if (type-of('"Sofia", Helvetica, Arial, Sans-serif') == color) {
+	.font-sofia:stack {
+  	background-color: '"Sofia", Helvetica, Arial, Sans-serif';
+  }
+}
+
+@if (type-of(9) == color) {
+	.font-sofia:9:font-size {
+  	background-color: 9;
+  }
+}
+
+@if (type-of(1.5) == color) {
+	.font-sofia:9:line-height {
+  	background-color: 1.5;
+  }
+}
+
+@if (type-of(10) == color) {
+	.font-sofia:10:font-size {
+  	background-color: 10;
+  }
+}
+
+@if (type-of(1.5) == color) {
+	.font-sofia:10:line-height {
+  	background-color: 1.5;
+  }
+}
+
+@if (type-of(12) == color) {
+	.font-sofia:12:font-size {
+  	background-color: 12;
+  }
+}
+
+@if (type-of(1) == color) {
+	.font-sofia:12:line-height {
+  	background-color: 1;
+  }
+}
+
+@if (type-of(14) == color) {
+	.font-sofia:14:font-size {
+  	background-color: 14;
+  }
+}
+
+@if (type-of(1.4) == color) {
+	.font-sofia:14:line-height {
+  	background-color: 1.4;
+  }
+}
+
+@if (type-of(15) == color) {
+	.font-sofia:15:font-size {
+  	background-color: 15;
+  }
+}
+
+@if (type-of(1.4) == color) {
+	.font-sofia:15:line-height {
+  	background-color: 1.4;
+  }
+}
+
+@if (type-of(16) == color) {
+	.font-sofia:16:font-size {
+  	background-color: 16;
+  }
+}
+
+@if (type-of(1.3) == color) {
+	.font-sofia:16:line-height {
+  	background-color: 1.3;
+  }
+}
+
+@if (type-of(17) == color) {
+	.font-sofia:17:font-size {
+  	background-color: 17;
+  }
+}
+
+@if (type-of(1.4) == color) {
+	.font-sofia:17:line-height {
+  	background-color: 1.4;
+  }
+}
+
+@if (type-of(18) == color) {
+	.font-sofia:18:font-size {
+  	background-color: 18;
+  }
+}
+
+@if (type-of(1.2) == color) {
+	.font-sofia:18:line-height {
+  	background-color: 1.2;
+  }
+}
+
+@if (type-of(20) == color) {
+	.font-sofia:20:font-size {
+  	background-color: 20;
+  }
+}
+
+@if (type-of(1.2) == color) {
+	.font-sofia:20:line-height {
+  	background-color: 1.2;
+  }
+}
+
+@if (type-of(22) == color) {
+	.font-sofia:22:font-size {
+  	background-color: 22;
+  }
+}
+
+@if (type-of(1.1) == color) {
+	.font-sofia:22:line-height {
+  	background-color: 1.1;
+  }
+}
+
+@if (type-of(24) == color) {
+	.font-sofia:24:font-size {
+  	background-color: 24;
+  }
+}
+
+@if (type-of(1.3) == color) {
+	.font-sofia:24:line-height {
+  	background-color: 1.3;
+  }
+}
+
+@if (type-of(26) == color) {
+	.font-sofia:26:font-size {
+  	background-color: 26;
+  }
+}
+
+@if (type-of(1.3) == color) {
+	.font-sofia:26:line-height {
+  	background-color: 1.3;
+  }
+}
+
+@if (type-of(28) == color) {
+	.font-sofia:28:font-size {
+  	background-color: 28;
+  }
+}
+
+@if (type-of(1.3) == color) {
+	.font-sofia:28:line-height {
+  	background-color: 1.3;
+  }
+}
+
+@if (type-of(32) == color) {
+	.font-sofia:32:font-size {
+  	background-color: 32;
+  }
+}
+
+@if (type-of(1.1) == color) {
+	.font-sofia:32:line-height {
+  	background-color: 1.1;
+  }
+}
+
+@if (type-of(36) == color) {
+	.font-sofia:36:font-size {
+  	background-color: 36;
+  }
+}
+
+@if (type-of(1.1) == color) {
+	.font-sofia:36:line-height {
+  	background-color: 1.1;
+  }
+}
+
+@if (type-of(38) == color) {
+	.font-sofia:38:font-size {
+  	background-color: 38;
+  }
+}
+
+@if (type-of(1.1) == color) {
+	.font-sofia:38:line-height {
+  	background-color: 1.1;
+  }
+}
+
+@if (type-of(42) == color) {
+	.font-sofia:42:font-size {
+  	background-color: 42;
+  }
+}
+
+@if (type-of(1.1) == color) {
+	.font-sofia:42:line-height {
+  	background-color: 1.1;
+  }
+}
+
+@if (type-of(50) == color) {
+	.font-sofia:50:font-size {
+  	background-color: 50;
+  }
+}
+
+@if (type-of(1.1) == color) {
+	.font-sofia:50:line-height {
+  	background-color: 1.1;
+  }
+}
+
+@if (type-of(60) == color) {
+	.font-sofia:60:font-size {
+  	background-color: 60;
+  }
+}
+
+@if (type-of(1) == color) {
+	.font-sofia:60:line-height {
+  	background-color: 1;
+  }
+}
+
+@if (type-of(86) == color) {
+	.font-sofia:86:font-size {
+  	background-color: 86;
+  }
+}
+
+@if (type-of(1) == color) {
+	.font-sofia:86:line-height {
+  	background-color: 1;
+  }
+}
+
+@if (type-of(94) == color) {
+	.font-sofia:94:font-size {
+  	background-color: 94;
+  }
+}
+
+@if (type-of(1) == color) {
+	.font-sofia:94:line-height {
+  	background-color: 1;
+  }
+}
+
+@if (type-of('"Helvetica Neue", Helvetica, Arial, sans-serif') == color) {
+	.font-helvetica:stack {
+  	background-color: '"Helvetica Neue", Helvetica, Arial, sans-serif';
+  }
+}
+
+@if (type-of(11) == color) {
+	.font-helvetica:11:font-size {
+  	background-color: 11;
+  }
+}
+
+@if (type-of(1.3) == color) {
+	.font-helvetica:11:line-height {
+  	background-color: 1.3;
+  }
+}
+
+@if (type-of(12) == color) {
+	.font-helvetica:12:font-size {
+  	background-color: 12;
+  }
+}
+
+@if (type-of(1.5) == color) {
+	.font-helvetica:12:line-height {
+  	background-color: 1.5;
+  }
+}
+
+@if (type-of(14) == color) {
+	.font-helvetica:14:font-size {
+  	background-color: 14;
+  }
+}
+
+@if (type-of(1.2) == color) {
+	.font-helvetica:14:line-height {
+  	background-color: 1.2;
+  }
+}
+
+@if (type-of(15) == color) {
+	.font-helvetica:15:font-size {
+  	background-color: 15;
+  }
+}
+
+@if (type-of(1.5) == color) {
+	.font-helvetica:15:line-height {
+  	background-color: 1.5;
+  }
+}
+
+@if (type-of(16) == color) {
+	.font-helvetica:16:font-size {
+  	background-color: 16;
+  }
+}
+
+@if (type-of(1.6) == color) {
+	.font-helvetica:16:line-height {
+  	background-color: 1.6;
+  }
+}
+
+@if (type-of(17) == color) {
+	.font-helvetica:17:font-size {
+  	background-color: 17;
+  }
+}
+
+@if (type-of(1.8) == color) {
+	.font-helvetica:17:line-height {
+  	background-color: 1.8;
+  }
+}
+
+@if (type-of(20) == color) {
+	.font-helvetica:20:font-size {
+  	background-color: 20;
+  }
+}
+
+@if (type-of(0) == color) {
+	.font-helvetica:20:line-height {
+  	background-color: 0;
+  }
+}
+
+@if (type-of(40) == color) {
+	.alt-size-map:breakpoint-mobile-wide {
+  	background-color: 40;
+  }
+}
+
+@if (type-of(48) == color) {
+	.alt-size-map:breakpoint-tablet {
+  	background-color: 48;
+  }
+}
+
+@if (type-of(56) == color) {
+	.alt-size-map:breakpoint-desktop {
+  	background-color: 56;
+  }
+}
+

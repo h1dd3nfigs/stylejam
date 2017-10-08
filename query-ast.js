@@ -248,6 +248,8 @@ module.exports = (ast, options) => {
 
       let current = []
       
+      let obj = _.stubObject()
+
       while (!_.every(firstarray, _.isEmpty)) {
         current = parentMap(firstarray)
 
@@ -263,8 +265,6 @@ module.exports = (ast, options) => {
         
       let count = 0
       
-      let mapNames = []
-
       for (let value of mapValues[0]) {
         current = mapValues.reduce((acc, curr) => {
           if(!_.isUndefined(curr[count])) acc.push(curr[count].trim())
@@ -277,16 +277,10 @@ module.exports = (ast, options) => {
         
         current.unshift(current.splice(0, current.length - 1).join(":"))
         
-        current = current.reduce((acc, curr, idx, arr) => {
-          acc[arr[0]] = arr[1]
-          return acc
-        }, {})
-
-        if(!_.has(current, '')) mapNames.push(current)
-        current = []
+        if (current[0] != '') obj[current[0]] = current[1]
       }
 
-      return mapNames
+      return obj
     }
 
     borders () {
@@ -297,12 +291,12 @@ module.exports = (ast, options) => {
         return $((n) => n.node.value === prop).closest('declaration')
       }
 
-      let borders = []
+      let obj = _.stubObject()
 
       for (let prop of borderProps) {
 
         let variables = borderQuery(prop).closest('declaration').find('variable').hasParent('property').map((n) => {
-          return stringify($(n).get(0))
+          return $(n).value()
         })
 
         let values = borderQuery(prop).closest('declaration').has('variable').find('value').map((n) => {
@@ -311,9 +305,7 @@ module.exports = (ast, options) => {
 
         if(variables.length > 0) {
           variables.forEach((val, idx) => {
-            let obj = Object.create(null)
             obj[val] = values[idx]
-            borders.push(obj)
           })
         }
 
@@ -321,28 +313,25 @@ module.exports = (ast, options) => {
         values = []
       }
 
-     return borders
+     return obj
     }
 
     colorVars() {
-      //philosophy, any var might be a color
-        // maybe look for colors that aren't maps
+      let obj = Object.create(null)
+
       let colorVars = $('stylesheet')
         .children('declaration')
         .children('property')
         .has('variable').filter((n) => {
           return $(n).closest('declaration').has('parentheses').length() === 0
-        }).closest('declaration').map((n) => {
-        let obj = Object.create(null)
+        }).closest('declaration').each((n) => {
         if(!_.isUndefined(n)) { 
-          obj[stringify($(n).find('variable').get(0))] = stringify($(n).children('value').get(0)).trim()
-          return obj
+          obj[$(n).find('variable').eq(0).value()] = stringify($(n).children('value').get(0)).trim()
         }
       })
 
-      return colorVars
+      return obj
     }
-
 
     /**
      * Return a new wrapper filtered by a selector
@@ -481,6 +470,15 @@ module.exports = (ast, options) => {
      */
     map (fn) {
       return this.nodes.map(fn)
+    }
+    /**
+     * Execute a function on each node in matched nodes
+     *
+     * @param {function} fn
+     * @returns {any}
+     */
+    each (fn) {
+      return this.nodes.forEach(fn)
     }
     /**
      * Reduce the set of matched nodes

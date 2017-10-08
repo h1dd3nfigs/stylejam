@@ -455,6 +455,11 @@ $letter-spacing-headline: -0.03rem;
 $letter-spacing-tight: -0.05rem;
 $letter-spacing-wide: 0.15rem;
 
+// CLICKABLE IMAGE CTA
+// --------------------------------------------------------
+$color-bg-clickable-image-button: palette( black );
+$color-bg-hover-clickable-image-button: palette( pink );
+
 // Body
 // -------------------------------------------------------
 %site-background {

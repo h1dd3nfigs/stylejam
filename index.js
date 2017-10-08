@@ -14,13 +14,97 @@ let astSimple = parse( cssSimpleMap )
 let $ = createQueryWrapper( ast )
 const util = require('util')
 
-console.log($().maps())
-console.log($().borders())
-console.log($().colorVars())
 
+let mapVars = $().maps()
 
+let colorVars = $().colorVars()
 
+let borderVars = $().borders()
 
+let scssString = ''
 
+let colorRules = () => {
+	for (let value in colorVars) {
+		scssString +=
+`@if (type-of(${colorVars[value]}) == color) {
+	.${value} {
+  	background-color: ${colorVars[value]};
+  }
+}
 
+`
+	}
+	
+	fs.writeFile('demos/colors.scss', scssString, function(err) {
+		if(err) {
+		    return console.log(err);
+		}
 
+		console.log("The file was saved!");
+	}); 	
+}
+
+let borderRules = () => {
+	scssString = 
+`@function borderwidth($input) {
+  @each $part in $input {
+    @if type-of($part) == number {
+      @return true;
+    }
+  }
+  @return false;
+}
+
+@function bordercolor($input) {
+  @each $part in $input {
+    @if type-of($part) == color {
+      @return true;
+    }
+  }
+  @return false;
+}
+
+`
+
+	for (let value in borderVars) {
+		scssString +=
+`@if bordercolor(${borderVars[value]}) and borderwidth(${borderVars[value]}) {
+  .${value} {
+  	border: ${borderVars[value]}
+  }
+}
+
+`
+	}
+	
+	fs.writeFile('demos/borders.scss', scssString, function(err) {
+		if(err) {
+		    return console.log(err);
+		}
+
+		console.log("The file was saved!");
+	}); 	
+}
+
+let mapRules = () => {
+	for (let value in mapVars) {
+		scssString +=
+`@if (type-of(${mapVars[value]}) == color) {
+	.${value} {
+  	background-color: ${mapVars[value]};
+  }
+}
+
+`
+	}
+	
+	fs.writeFile('demos/maps.scss', scssString, function(err) {
+		if(err) {
+		    return console.log(err);
+		}
+
+		console.log("The file was saved!");
+	}); 	
+}
+
+mapRules()
