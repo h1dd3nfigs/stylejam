@@ -14,7 +14,12 @@ let astSimple = parse( cssSimpleMap )
 let $ = createQueryWrapper( ast )
 const util = require('util')
 
-// console.log($().maps())
+console.log($().maps())
+console.log($().borders())
+console.log($().colorVars())
+
+
+
 
 
 

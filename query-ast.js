@@ -221,61 +221,6 @@ module.exports = (ast, options) => {
       this.nodes = nodes
     }
 
-    // maps() {
-
-    //   let firstarray = $('stylesheet')
-    //     .children( 'declaration' )
-    //     .children( 'value' )
-    //     .children( 'parentheses' )
-    //     .find( 'value' )
-    //     .map((n) => {
-    //       if($(n).children('parentheses').length() === 0) return n
-    //     }) // this is a array of final nodes
-
-    //   let parentMap = (arr) => {
-    //     return arr.map((n) => { // each n is a final value array item
-    //       return $(n)
-    //       .closest('declaration')
-    //       .has('property')
-    //       .find('property')
-    //       .first()
-    //       .value()
-    //     })
-    //   }
-
-    //   let mapValues = [firstarray.map((n) => { 
-    //     return getType($(n).children().last().get(0)) === 'space' 
-    //     ? '' : stringify($(n).children().last().get(0))})]
-
-    //   let current = []
-      
-    //   while (!_.every(firstarray, _.isEmpty)) {
-    //     current = parentMap(firstarray)
-
-    //     if ((!_.isEqual(current, _.last(mapValues))) 
-    //       && (!_.every(current, _.isEmpty))) mapValues.push(current) 
-
-    //     firstarray = firstarray.map((n) => {
-    //       return NodeWrapper.isNodeWrapper(n) ? n.parent : undefined
-    //     })
-    //   }
-    //   _.reverse(mapValues)
-
-    //   let mapNames = []
-
-    //   while(mapValues[0].length > 0) {
-
-    //     mapValues.forEach((element) => { // each array in map values
-    //       current.push(element[0])
-    //       element.shift()
-    //     })
-    //     mapNames.push(current)
-    //     current = []
-    //   }
-
-    //   return mapNames
-    // }
-
     maps() {
 
       let firstarray = $()
@@ -284,10 +229,10 @@ module.exports = (ast, options) => {
         .hasParents( 'declaration' )
         .map((n) => {
           if($(n).has('parentheses').length() === 0) return n
-        }) // this is a array of final nodes
+        })
 
       let parentMap = (arr) => {
-        return arr.map((n) => { // each n is a final value array item
+        return arr.map((n) => { 
           return $(n)
           .closest('declaration')
           .has('property')
@@ -313,37 +258,90 @@ module.exports = (ast, options) => {
           return NodeWrapper.isNodeWrapper(n) ? n.parent : undefined
         })
       }
-      _.reverse(mapValues)
 
+      _.reverse(mapValues)
+        
+      let count = 0
+      
       let mapNames = []
 
-      for(let value of mapValues[0]) {
-        mapValues.forEach((element) => { // each array in map values
-          console.log(`element0 ${element[0]}`)
-          current.push(element[0])
-          element.shift()
-        })
-        console.log(`current ${current}`)
-        mapNames.push(_.compact(current))
+      for (let value of mapValues[0]) {
+        current = mapValues.reduce((acc, curr) => {
+          if(!_.isUndefined(curr[count])) acc.push(curr[count].trim())
+          return acc
+        }, [])
+
+        count++
+
+        current = _.compact(current)
+        
+        current.unshift(current.splice(0, current.length - 1).join(":"))
+        
+        current = current.reduce((acc, curr, idx, arr) => {
+          acc[arr[0]] = arr[1]
+          return acc
+        }, {})
+
+        if(!_.has(current, '')) mapNames.push(current)
         current = []
       }
+
       return mapNames
     }
 
-    /* Ultimate goal
-       *array of objects
-        *[ { palettes:black:base : #000000 },
-        *  { palettes:black:tranmed :  transparentize( palette( black ), 0.5 ) }
-        *]
-        */
+    borders () {
 
-        // Maybe starting at the last index: 
-         // Start at the final index of the mapValue array
-          // map: first array index, push and unshift
-          // when done, pushed mapped array into storage array for intermed
+      let borderProps = ['dotted', 'dashed', 'solid', 'double', 'groove', 'ridge', 'inset', 'outset']
+      
+      let borderQuery = (prop) => {
+        return $((n) => n.node.value === prop).closest('declaration')
+      }
 
-          // unshift first array value of each array 
-         // push index 0 of mapValue array into object
+      let borders = []
+
+      for (let prop of borderProps) {
+
+        let variables = borderQuery(prop).closest('declaration').find('variable').hasParent('property').map((n) => {
+          return stringify($(n).get(0))
+        })
+
+        let values = borderQuery(prop).closest('declaration').has('variable').find('value').map((n) => {
+          return stringify($(n).get(0))
+        })
+
+        if(variables.length > 0) {
+          variables.forEach((val, idx) => {
+            let obj = Object.create(null)
+            obj[val] = values[idx]
+            borders.push(obj)
+          })
+        }
+
+        variables = []
+        values = []
+      }
+
+     return borders
+    }
+
+    colorVars() {
+      //philosophy, any var might be a color
+        // maybe look for colors that aren't maps
+      let colorVars = $('stylesheet')
+        .children('declaration')
+        .children('property')
+        .has('variable').filter((n) => {
+          return $(n).closest('declaration').has('parentheses').length() === 0
+        }).closest('declaration').map((n) => {
+        let obj = Object.create(null)
+        if(!_.isUndefined(n)) { 
+          obj[stringify($(n).find('variable').get(0))] = stringify($(n).children('value').get(0)).trim()
+          return obj
+        }
+      })
+
+      return colorVars
+    }
 
 
     /**
