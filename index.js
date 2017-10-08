@@ -6,13 +6,16 @@ let { parse, stringify } = require('scss-parser')
 let createQueryWrapper = require('./query-ast')
 
 let css = fs.readFileSync(path.resolve('sample.scss'), "utf-8")
-let cssSimpleMap = fs.readFileSync(path.resolve('sample-simple-map.scss'), "utf-8")
 const _ = require('lodash')
-let ast = parse( css )
-let astSimple = parse( cssSimpleMap )
+let ast = parse(fs.readFileSync(path.resolve('sample.scss'), "utf-8"))
+
+let express = require("express");
+let app = express();
+let port = process.env.PORT || 8080;
 
 let $ = createQueryWrapper( ast )
-const util = require('util')
+
+app.use(express.static('public'));
 
 
 let mapVars = $().maps()
@@ -108,3 +111,5 @@ let mapRules = () => {
 }
 
 mapRules()
+
+app.listen(port);
