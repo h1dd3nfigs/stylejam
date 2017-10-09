@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/stylejam.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <title>title</title>
+  </head>
+  <body>
+  	<section class="maps">
+  		<h1>Mapped Colors</h1>
+  		{{#each maps}}
+  			<div class="stylejam-tile-container">
+  				<div class="stylejam-tile {{@key}}"></div>
+  				<p class="stylejam-variable-name">{{append @key}}</p>
+  			</div>
+  		{{/each}}
+  	</section>
+  	<section class="colors">
+  	<h1>Colors</h1>
+  		{{#each colors}}
+  			<div class="stylejam-tile-container">
+  				<div class="stylejam-tile {{@key}}"></div>
+  				<p class="stylejam-variable-name">{{prepend @key}}</p>
+  			</div>
+  		{{/each}}
+  	</section>
+  	<section class="borders">
+  	<h1>Borders</h1>
+  		{{#each borders}}
+  			<div class="stylejam-tile-container">
+  				<div class="stylejam-tile {{@key}}"></div>
+  				<p class="stylejam-variable-name">{{prepend @key}}</p>
+  			</div>
+  		{{/each}}
+  	</section>
+  </body>
+</html>

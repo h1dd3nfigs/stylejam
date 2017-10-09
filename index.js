@@ -3,9 +3,7 @@
 let fs = require('fs')
 let path = require('path')
 
-// let css = fs.readFileSync(path.resolve('sample.scss'), "utf-8")
 const _ = require('lodash')
-// let ast = parse(fs.readFileSync(path.resolve('sample.scss'), "utf-8"))
 
 let express = require("express");
 let app = express();

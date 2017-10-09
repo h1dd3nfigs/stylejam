@@ -275,7 +275,7 @@ module.exports = (ast, options) => {
 
         current = _.compact(current)
         
-        current.unshift(current.splice(0, current.length - 1).join("_"))
+        current.unshift(current.splice(0, current.length - 1).join('-stylejam-'))
         
         if (current[0] != '') obj['.' + current[0]] = current[1]
       }

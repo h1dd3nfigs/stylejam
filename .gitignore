@@ -18,3 +18,8 @@ notes
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Generated files #
+######################
+demos/styles.scss
+public/index.html
