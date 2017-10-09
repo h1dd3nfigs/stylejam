@@ -8,9 +8,15 @@ let fs = require('fs')
 let path = require('path')
 let program = require('commander')
 let util = require('util')
+let sass = require('node-sass')
 
 let express = require("express");
+
+let { parse, stringify } = require('scss-parser')
+let createQueryWrapper = require('./query-ast')
+
 let writeStyles = require('./index.js')
+
 let app = express();
 let port = process.env.PORT || 8080;
 let open = require('open')
@@ -53,13 +59,24 @@ if(!fs.existsSync(file)) {
     process.exit(1);
 }
 
-const input = fs.readFileSync(file, 'utf-8');
+let ast = parse(fs.readFileSync(file, 'utf-8'));
+let $ = createQueryWrapper(ast)
 
+let mapVars = $().maps()
+
+let colorVars = $().colorVars()
+
+let borderVars = $().borders()
 
 if(program.args.length > 1) {
     let deps = program.args.slice(1)
         deps.push(program.args[0])
-        writeStyles(input, deps)
+        writeStyles(mapVars, colorVars, borderVars, deps)
+        sass.render({
+            file: 'demos/styles.scss'
+        }, function(err, result) {
+            let scssTest = result.css.toString()
+        })
 }
 
 /**

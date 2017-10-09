@@ -2,8 +2,6 @@
 
 let fs = require('fs')
 let path = require('path')
-let { parse, stringify } = require('scss-parser')
-let createQueryWrapper = require('./query-ast')
 
 // let css = fs.readFileSync(path.resolve('sample.scss'), "utf-8")
 const _ = require('lodash')
@@ -16,17 +14,7 @@ let port = process.env.PORT || 8080;
 
 app.use(express.static('public'));
 
-module.exports = (input, deps) => {
-
-	let ast = parse(input)
-
-	let $ = createQueryWrapper( ast )
-
-	let mapVars = $().maps()
-
-	let colorVars = $().colorVars()
-
-	let borderVars = $().borders()
+module.exports = (mapVars, colorVars, borderVars, deps) => {
 
 	let scssString = ''
 
