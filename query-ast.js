@@ -275,9 +275,9 @@ module.exports = (ast, options) => {
 
         current = _.compact(current)
         
-        current.unshift(current.splice(0, current.length - 1).join(":"))
+        current.unshift(current.splice(0, current.length - 1).join("_"))
         
-        if (current[0] != '') obj[current[0]] = current[1]
+        if (current[0] != '') obj['.' + current[0]] = current[1]
       }
 
       return obj
@@ -305,7 +305,7 @@ module.exports = (ast, options) => {
 
         if(variables.length > 0) {
           variables.forEach((val, idx) => {
-            obj[val] = values[idx]
+            obj['.' + val] = values[idx]
           })
         }
 
@@ -326,7 +326,7 @@ module.exports = (ast, options) => {
           return $(n).closest('declaration').has('parentheses').length() === 0
         }).closest('declaration').each((n) => {
         if(!_.isUndefined(n)) { 
-          obj[$(n).find('variable').eq(0).value()] = stringify($(n).children('value').get(0)).trim()
+          obj['.' + $(n).find('variable').eq(0).value()] = stringify($(n).children('value').get(0)).trim()
         }
       })
 
