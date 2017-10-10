@@ -112,6 +112,11 @@ if(program.args.length > 0) {
         sass.render({
             data: contents,
         }, (err, result) => {
+
+            if(err) {
+                console.log("Check if scss files and import order are valid")
+            }
+
             let cssString = result.css.toString()
             let mapData = test(cssString, mapVars)
             let colorData = test(cssString, colorVars)
