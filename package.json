@@ -1,8 +1,8 @@
 {
   "name": "stylejam",
   "version": "1.0.0",
-  "description": "dynamic style guides",
-  "main": "index.js",
+  "description": "Effortless Styleguides",
+  "main": "",
   "bin": "console.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

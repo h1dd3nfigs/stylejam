@@ -27,11 +27,6 @@ let open = require('open')
  * Hello, CLI.
  */
 
-// Program needs to accept var scss file
-    // webjam ~/cosmopolitan/variables.scss
-    // take that file and run scss commands
-    // take optional dependencies and node sass compile dependencies + generated css files
-
 program
     .version(require('./package.json').version)
     .usage('[options] <file>')
@@ -112,8 +107,6 @@ if(program.args.length > 1) {
                     if(err) {
                         return console.log(err);
                     }
-
-                    console.log("The file was saved!");
                 }); 
 
                 fs.readFile('demos/demo-template.html', 'utf-8', (error, source) => {
@@ -136,7 +129,6 @@ if(program.args.length > 1) {
                         if(err) {
                             return console.log(err);
                             }
-                            console.log("The file was saved!");
                     })
 
                     open('public/index.html')
