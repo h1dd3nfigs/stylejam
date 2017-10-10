@@ -30,17 +30,13 @@ let open = require('open')
 program
     .version(require('./package.json').version)
     .usage('[options] <file>')
-    .option('-d, --hdm', 'HDM file shortcuts')
+    .option('-m, --hdm', 'HDM file shortcuts')
+    .option('-d --demo', 'Display demo of sample scss variable file')
     .option('-b, --bench', 'measure and output timing data')
     .parse(process.argv);
 
 
-// File is a required parameter
-if(program.args.length === 0) {
-    console.error(`You must provide a source file.`);
-    process.exit(1);
-}
-// stylejam -d ~/carron-dev elledecor
+
 
 /**
  * Read input.
@@ -49,8 +45,10 @@ let file = ''
 
 if(program.hdm) {
     file = path.resolve(`${program.args[0]}/media-platform/fre-hdm/sites/${program.args[1]}/assets/scss/_variables.scss`)
+} else if(program.demo) {
+    file = path.resolve('demos/sample.scss');
 } else {
-    file = path.resolve(program.args[0]);
+  file = path.resolve(program.args[0]);  
 }
 
 // The file must exist!
@@ -85,7 +83,6 @@ let styleData = (maps, colors, borders) => {
     data = { maps, colors, borders }
 }
 
-if(program.args.length > 0) {
 
     let deps = []
 
@@ -97,6 +94,10 @@ if(program.args.length > 0) {
             path.resolve(`${program.args[0]}/media-platform/fre-hdm/assets/scss/_variables.scss`),
             path.resolve(`${program.args[0]}/media-platform/fre-hdm/sites/${program.args[1]}/assets/scss/_variables.scss`)
         ]
+
+    } else if(program.demo) {
+
+        deps.push(file)
 
     } else {
     
@@ -161,7 +162,6 @@ if(program.args.length > 0) {
             })
         })
     })
-}
 
 /**
  * Parse into an AST!
