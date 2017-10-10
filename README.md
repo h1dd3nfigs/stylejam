@@ -1,5 +1,7 @@
 ## stylejam
 
+:warning:  **Under construction! Not ready for public use.**  :construction:
+
 ### Convert mapped colors, color variables and border variables to a simple styleguide with one command
 #### - Supply scss file containing variable declarations along with imported/dependency files
 #### - No changes to markup or notation required
