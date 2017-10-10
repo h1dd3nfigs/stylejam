@@ -11,11 +11,13 @@ module.exports = (mapVars, colorVars, borderVars, deps) => {
 	let scssString = ''
 
 	let mapRules = () => {
+		
 		if(deps) {
 			deps.forEach((dep) => {
 				scssString += fs.readFileSync(dep, "utf-8")
 			})
 		}
+		
 		for (let value in mapVars) {
 			scssString +=
 	`
@@ -35,6 +37,7 @@ module.exports = (mapVars, colorVars, borderVars, deps) => {
 	}
 
 	let colorRules = () => {
+		
 		for (let value in colorVars) {
 			scssString +=
 	`@if (type-of(${colorVars[value]}) == color) {
@@ -76,6 +79,7 @@ module.exports = (mapVars, colorVars, borderVars, deps) => {
 	`
 
 		for (let value in borderVars) {
+			
 			scssString +=
 	`@if bordercolor(${borderVars[value]}) and borderwidth(${borderVars[value]}) {
 	  ${value} {
