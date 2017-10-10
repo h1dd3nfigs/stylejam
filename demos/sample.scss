@@ -1,0 +1,75 @@
+
+
+// Colors
+// -------------------------------------------------------
+$color-base-pink: #E9328C;
+$color-base-grey: #CDCDCD;
+
+// Color Palettes
+// -------------------------------------------------------
+$palettes: (
+	black: (
+		base: #000000,
+		tranmed: transparentize( black, 0.5 )
+	),
+
+	white: (
+		base: #FFFFFF,
+		tranlight: transparentize( white ), 0.8 )
+	),
+
+	grey: (
+		base: $color-base-grey,
+		xxxlight: lighten($color-base-grey,24%),
+		xxlight: lighten($color-base-grey, 17%),
+		xlight: lighten($color-base-grey, 15%),
+		light: lighten($color-base-grey, 12%),
+		medlight: lighten($color-base-grey, 9%),
+		medmedium: darken($color-base-grey, 2%),
+		medium: darken($color-base-grey, 18%),
+		dark: darken($color-base-grey, 32%),
+		xdark: darken($color-base-grey, 40%),
+		xxdark: darken($color-base-grey, 55%),
+		xxxdark: darken($color-base-grey, 63%)
+	),
+
+	pink: (
+		base: $color-base-pink,
+		xlight: lighten($color-base-pink, 17%),
+		light: lighten($color-base-pink, 12%),
+		medium: darken($color-base-pink, 18%),
+		dark: darken($color-base-pink, 22%)
+	),
+
+	blue: (
+		base: #00008D
+	),
+
+	teal: (
+		base: #01FFFF
+	),
+
+	yellow: (
+		base: #FEF035,
+		tranmed: transparentize(  yellow, 0.05 )
+	),
+
+	purple: (
+		base: #FD4CFC
+	),
+
+	green: (
+		base: #35B763
+	),
+
+	red: (
+		base: #FF4C49
+	),
+);
+
+// Borders
+// -------------------------------------------------------
+$border-thin-black: 0.1875rem black;
+$border-thin-white: 0.1875rem white;
+$border-thin-pink: 0.1875rem pink;
+

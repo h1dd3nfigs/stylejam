@@ -550,20 +550,10 @@ th {
   #palettes-stylejam-black-stylejam-base button:before {
     content: "#000000"; }
 
-#palettes-stylejam-black-stylejam-tranmed {
-  background-color: rgba(0, 0, 0, 0.5); }
-  #palettes-stylejam-black-stylejam-tranmed button:before {
-    content: "rgba(0, 0, 0, 0.5)"; }
-
 #palettes-stylejam-white-stylejam-base {
   background-color: #FFFFFF; }
   #palettes-stylejam-white-stylejam-base button:before {
     content: "#FFFFFF"; }
-
-#palettes-stylejam-white-stylejam-tranlight {
-  background-color: rgba(255, 255, 255, 0.2); }
-  #palettes-stylejam-white-stylejam-tranlight button:before {
-    content: "rgba(255, 255, 255, 0.2)"; }
 
 #palettes-stylejam-grey-stylejam-base {
   background-color: #CDCDCD; }
@@ -625,157 +615,127 @@ th {
   #palettes-stylejam-grey-stylejam-xxxdark button:before {
     content: "#2c2c2c"; }
 
-#palettes-stylejam-pink-stylejam-base {
-  background-color: #E9328C; }
-  #palettes-stylejam-pink-stylejam-base button:before {
-    content: "#E9328C"; }
-
-#palettes-stylejam-pink-stylejam-xlight {
-  background-color: #f180b8; }
-  #palettes-stylejam-pink-stylejam-xlight button:before {
-    content: "#f180b8"; }
-
-#palettes-stylejam-pink-stylejam-light {
-  background-color: #ef69ab; }
-  #palettes-stylejam-pink-stylejam-light button:before {
-    content: "#ef69ab"; }
-
-#palettes-stylejam-pink-stylejam-medium {
-  background-color: #ad135e; }
-  #palettes-stylejam-pink-stylejam-medium button:before {
-    content: "#ad135e"; }
-
-#palettes-stylejam-pink-stylejam-dark {
-  background-color: #9a1154; }
-  #palettes-stylejam-pink-stylejam-dark button:before {
-    content: "#9a1154"; }
-
 #palettes-stylejam-blue-stylejam-base {
-  background-color: #00008D; }
+  background-color: #3777BC; }
   #palettes-stylejam-blue-stylejam-base button:before {
-    content: "#00008D"; }
-
-#palettes-stylejam-teal-stylejam-base {
-  background-color: #01FFFF; }
-  #palettes-stylejam-teal-stylejam-base button:before {
-    content: "#01FFFF"; }
-
-#palettes-stylejam-yellow-stylejam-base {
-  background-color: #FEF035; }
-  #palettes-stylejam-yellow-stylejam-base button:before {
-    content: "#FEF035"; }
-
-#palettes-stylejam-yellow-stylejam-tranmed {
-  background-color: rgba(254, 240, 53, 0.95); }
-  #palettes-stylejam-yellow-stylejam-tranmed button:before {
-    content: "rgba(254, 240, 53, 0.95)"; }
-
-#palettes-stylejam-purple-stylejam-base {
-  background-color: #FD4CFC; }
-  #palettes-stylejam-purple-stylejam-base button:before {
-    content: "#FD4CFC"; }
-
-#palettes-stylejam-green-stylejam-base {
-  background-color: #35B763; }
-  #palettes-stylejam-green-stylejam-base button:before {
-    content: "#35B763"; }
-
-#palettes-stylejam-red-stylejam-base {
-  background-color: #FF4C49; }
-  #palettes-stylejam-red-stylejam-base button:before {
-    content: "#FF4C49"; }
+    content: "#3777BC"; }
 
 #color-bg-nav-stylejam-color {
-  background-color: #FFFFFF; }
+  background-color: #000000; }
   #color-bg-nav-stylejam-color button:before {
-    content: "#FFFFFF"; }
-
-#color-bg-sidepanel-stylejam-color {
-  background-color: transparent; }
-  #color-bg-sidepanel-stylejam-color button:before {
-    content: "transparent"; }
-
-#color-bg-sidepanel-submenu-stylejam-color {
-  background-color: transparent; }
-  #color-bg-sidepanel-submenu-stylejam-color button:before {
-    content: "transparent"; }
+    content: "#000000"; }
 
 #color-bg-search-overlay-stylejam-color {
   background-color: rgba(0, 0, 0, 0.9); }
   #color-bg-search-overlay-stylejam-color button:before {
     content: "rgba(0, 0, 0, 0.9)"; }
 
-#color-bg-footer-stylejam-color {
-  background-color: #FFFFFF; }
-  #color-bg-footer-stylejam-color button:before {
-    content: "#FFFFFF"; }
-
-#quiz-background-stylejam-color {
-  background-color: #f8f8f8; }
-  #quiz-background-stylejam-color button:before {
-    content: "#f8f8f8"; }
-
-#gallery-button-background-stylejam-color {
-  background-color: #E9328C; }
-  #gallery-button-background-stylejam-color button:before {
-    content: "#E9328C"; }
-
-#color-base-pink {
-  background-color: #E9328C; }
-  #color-base-pink button:before {
-    content: "#E9328C"; }
-
 #color-bg-lazy {
   background-color: #f3f3f3; }
   #color-bg-lazy button:before {
     content: "#f3f3f3"; }
 
-#color-bg-newsletter-outer {
+#color-nav-sponsor-label-svg-logo {
+  background-color: #000000; }
+  #color-nav-sponsor-label-svg-logo button:before {
+    content: "#000000"; }
+
+#color-nav-sponsor-svg-logo {
+  background-color: #000000; }
+  #color-nav-sponsor-svg-logo button:before {
+    content: "#000000"; }
+
+#color-bg-collection-breaker-header {
   background-color: transparent; }
-  #color-bg-newsletter-outer button:before {
+  #color-bg-collection-breaker-header button:before {
     content: "transparent"; }
 
+#color-bg-newsletter-outer {
+  background-color: #000000; }
+  #color-bg-newsletter-outer button:before {
+    content: "#000000"; }
+
 #color-embed-rating-icon {
-  background-color: #E9328C; }
+  background-color: #000000; }
   #color-embed-rating-icon button:before {
-    content: "#E9328C"; }
+    content: "#000000"; }
 
 #youtube-playlist-arrow-button-bg {
-  background-color: #E9328C; }
+  background-color: #3777BC; }
   #youtube-playlist-arrow-button-bg button:before {
-    content: "#E9328C"; }
+    content: "#3777BC"; }
 
 #youtube-playlist-arrow-button-bg-hover {
-  background-color: rgba(233, 50, 140, 0.75); }
+  background-color: rgba(55, 119, 188, 0.75); }
   #youtube-playlist-arrow-button-bg-hover button:before {
-    content: "rgba(233, 50, 140, 0.75)"; }
+    content: "rgba(55, 119, 188, 0.75)"; }
 
 #youtube-playlist-arrow-color {
   background-color: #FFFFFF; }
   #youtube-playlist-arrow-color button:before {
     content: "#FFFFFF"; }
 
-#color-bg-sponsor-gallery {
-  background-color: #f8f8f8; }
-  #color-bg-sponsor-gallery button:before {
-    content: "#f8f8f8"; }
+#background-longform-image-credit {
+  background-color: rgba(0, 0, 0, 0.5); }
+  #background-longform-image-credit button:before {
+    content: "rgba(0, 0, 0, 0.5)"; }
 
-#color-valid {
-  background-color: #35B763; }
-  #color-valid button:before {
-    content: "#35B763"; }
+#color-bg-clickable-image-button {
+  background-color: #000000; }
+  #color-bg-clickable-image-button button:before {
+    content: "#000000"; }
 
-#color-error {
-  background-color: #FF4C49; }
-  #color-error button:before {
-    content: "#FF4C49"; }
+#color-bg-hover-clickable-image-button {
+  background-color: #3777BC; }
+  #color-bg-hover-clickable-image-button button:before {
+    content: "#3777BC"; }
 
 #border-related-content {
   border: 0.0625rem dotted #e4e4e4; }
   #border-related-content button:before {
     content: "0.0625rem dotted #e4e4e4"; }
 
-#border-thin-black {
-  border: 0.1875rem solid #000000; }
-  #border-thin-black button:before {
-    content: "0.1875rem solid #000000"; }
+#border-solid-thin-light {
+  border: 0.0625rem solid #e4e4e4; }
+  #border-solid-thin-light button:before {
+    content: "0.0625rem solid #e4e4e4"; }
+
+#border-solid-thin-dark {
+  border: 0.0625rem solid #000000; }
+  #border-solid-thin-dark button:before {
+    content: "0.0625rem solid #000000"; }
+
+#border-solid-neutral {
+  border: 0.0625rem solid #c8c8c8; }
+  #border-solid-neutral button:before {
+    content: "0.0625rem solid #c8c8c8"; }
+
+#border-solid-thick-neutral {
+  border: 0.325rem solid #7b7b7b; }
+  #border-solid-thick-neutral button:before {
+    content: "0.325rem solid #7b7b7b"; }
+
+#border-solid-medium-dark {
+  border: 0.325rem solid #000000; }
+  #border-solid-medium-dark button:before {
+    content: "0.325rem solid #000000"; }
+
+#border-solid-thick-dark {
+  border: 0.525rem solid #000000; }
+  #border-solid-thick-dark button:before {
+    content: "0.525rem solid #000000"; }
+
+#border-solid-dark {
+  border: 0.0625rem solid #000000; }
+  #border-solid-dark button:before {
+    content: "0.0625rem solid #000000"; }
+
+#border-solid-blue {
+  border: 0.225rem solid #3777BC; }
+  #border-solid-blue button:before {
+    content: "0.225rem solid #3777BC"; }
+
+#border-custom-promo {
+  border: 0.525rem solid #000000; }
+  #border-custom-promo button:before {
+    content: "0.525rem solid #000000"; }

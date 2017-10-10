@@ -32,29 +32,30 @@ h4 {
 	justify-content: center;
 }
 
-.map:hover button, .color:hover button, .border:hover button {
-	display: block;
-}
-
 button {
 	border: 0;
-	background: rgba(0, 0, 0, 0.5);
+	background-color: rgba(0, 0, 0, 0.5);
 	font-size: 11px;
 	font-weight: bold;
 	border-radius: 0px;
 	display: none;
 	outline: 1px solid rgba(0, 0, 0, 0.5);
-	transition: outline-color 0.3s ease-in-out;
+	transition: background-color 0.3s ease-in-out;
 }
 
 button:hover {
-	outline-color: white;
+	background-color: rgba(0, 0, 0, 0.75);
+}
+
+.map:hover button, .color:hover button, .border:hover button {
+	display: block;
 }
 
 .map button:before, .color button:before, .border button:before {
 	color: white;
 	padding: 7px 8px 5px;
 	font-size: 11px;
+	text-shadow: 0 0 2px black;
 	font-weight: bold;
 	border-radius: 0px;
 	text-align: center;
