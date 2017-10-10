@@ -85,7 +85,7 @@ if(program.args.length > 0) {
         
         writeStyles(mapVars, colorVars, borderVars, deps)
         
-        fs.readFile('demos/styles.scss', 'utf8', (err, contents) => {
+        fs.readFile(path.join(__dirname, 'demos/styles.scss'), 'utf8', (err, contents) => {
             
             sass.render({
                 data: contents,
@@ -109,7 +109,7 @@ if(program.args.length > 0) {
                     }
                 }); 
 
-                fs.readFile('demos/demo-template.html', 'utf-8', (error, source) => {
+                fs.readFile(path.join(__dirname, 'demos/demo-template.html'), 'utf-8', (error, source) => {
                     
                     handlebars.registerHelper('append', (key) => {
                         key = '$' + key.replace(/-stylejam-/g, ' : ')
@@ -131,7 +131,7 @@ if(program.args.length > 0) {
                             }
                     })
 
-                    open('public/index.html')
+                    open(path.join(__dirname, 'public/index.html'))
                 })
             })
         })
