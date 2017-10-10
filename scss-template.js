@@ -31,7 +31,6 @@ module.exports = (mapVars, colorVars, borderVars, deps) => {
 
 	`
 		}
-
 		colorRules()	
 	}
 
@@ -90,7 +89,7 @@ module.exports = (mapVars, colorVars, borderVars, deps) => {
 
 	`
 		}
-		
+
 		fs.writeFile(path.join(__dirname, 'demos/styles.scss'), scssString, function(err) {
 			if(err) {
 			    return console.log(err);

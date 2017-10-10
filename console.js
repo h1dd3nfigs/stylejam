@@ -30,6 +30,7 @@ let open = require('open')
 program
     .version(require('./package.json').version)
     .usage('[options] <file>')
+    .option('-d, --hdm', 'HDM file shortcuts')
     .option('-b, --bench', 'measure and output timing data')
     .parse(process.argv);
 
@@ -39,11 +40,18 @@ if(program.args.length === 0) {
     console.error(`You must provide a source file.`);
     process.exit(1);
 }
+// stylejam -d ~/carron-dev elledecor
 
 /**
  * Read input.
  */
-const file = path.resolve(program.args[0]);
+let file = ''
+
+if(program.hdm) {
+    file = path.resolve(`${program.args[0]}/media-platform/fre-hdm/sites/${program.args[1]}/assets/scss/_variables.scss`)
+} else {
+    file = path.resolve(program.args[0]);
+}
 
 // The file must exist!
 if(!fs.existsSync(file)) {
@@ -78,63 +86,76 @@ let styleData = (maps, colors, borders) => {
 }
 
 if(program.args.length > 0) {
+
+    let deps = []
+
+    if(program.hdm) {
+
+        deps = [
+            path.resolve(`${program.args[0]}/media-platform/mp-bower-assets/scss/_utils.scss`),
+            path.resolve(`${program.args[0]}/media-platform/mp-bower-assets/scss/_system.scss`),
+            path.resolve(`${program.args[0]}/media-platform/fre-hdm/assets/scss/_variables.scss`),
+            path.resolve(`${program.args[0]}/media-platform/fre-hdm/sites/${program.args[1]}/assets/scss/_variables.scss`)
+        ]
+
+    } else {
     
-    let deps = program.args.slice(1)
+        deps = program.args.slice(1)
         
         deps.push(program.args[0])
+    }
         
-        writeStyles(mapVars, colorVars, borderVars, deps)
+    writeStyles(mapVars, colorVars, borderVars, deps)
         
-        fs.readFile(path.join(__dirname, 'demos/styles.scss'), 'utf8', (err, contents) => {
-            
-            sass.render({
-                data: contents,
-            }, (err, result) => {
-                let cssString = result.css.toString()
-                let mapData = test(cssString, mapVars)
-                let colorData = test(cssString, colorVars)
-                let borderData = test(cssString, borderVars)
+    fs.readFile(path.join(__dirname, 'demos/styles.scss'), 'utf8', (err, contents) => {
+        
+        sass.render({
+            data: contents,
+        }, (err, result) => {
+            let cssString = result.css.toString()
+            let mapData = test(cssString, mapVars)
+            let colorData = test(cssString, colorVars)
+            let borderData = test(cssString, borderVars)
 
-                _.forIn(colorData, (val, key) => { // TO DO: Separate border classes from color classes
-                    if(borderData[key]) {
-                        delete colorData[key]
-                    }
+            _.forIn(colorData, (val, key) => { // TO DO: Separate border classes from color classes
+                if(borderData[key]) {
+                    delete colorData[key]
+                }
+            })
+
+            styleData(mapData, colorData, borderData)
+            fs.writeFile(path.join(__dirname, 'public/css/styles.css'), cssString, function(err) {
+                if(err) {
+                    return console.log(err);
+                }
+            }); 
+
+            fs.readFile(path.join(__dirname, 'demos/demo-template.html'), 'utf-8', (error, source) => {
+                
+                handlebars.registerHelper('append', (key) => {
+                    key = '$' + key.replace(/-stylejam-/g, ' : ')
+                    return key
                 })
 
-                styleData(mapData, colorData, borderData)
+                handlebars.registerHelper('prepend', (key) => {
+                    key = '$' + key
+                    return key
+                })
 
-                fs.writeFile(path.join(__dirname, 'public/css/styles.css'), cssString, function(err) {
+                let template = handlebars.compile(source)
+                
+                let html = template(data)
+                
+                fs.writeFile(path.join(__dirname, 'public/index.html'), html, function(err) {
                     if(err) {
                         return console.log(err);
                     }
-                }); 
-
-                fs.readFile(path.join(__dirname, 'demos/demo-template.html'), 'utf-8', (error, source) => {
-                    
-                    handlebars.registerHelper('append', (key) => {
-                        key = '$' + key.replace(/-stylejam-/g, ' : ')
-                        return key
-                    })
-
-                    handlebars.registerHelper('prepend', (key) => {
-                        key = '$' + key
-                        return key
-                    })
-
-                    let template = handlebars.compile(source)
-                    
-                    let html = template(data)
-                    
-                    fs.writeFile(path.join(__dirname, 'public/index.html'), html, function(err) {
-                        if(err) {
-                            return console.log(err);
-                            }
-                    })
-
-                    open(path.join(__dirname, 'public/index.html'))
                 })
+
+                open(path.join(__dirname, 'public/index.html'))
             })
         })
+    })
 }
 
 /**
