@@ -77,7 +77,7 @@ let styleData = (maps, colors, borders) => {
     data = { maps, colors, borders }
 }
 
-if(program.args.length > 1) {
+if(program.args.length > 0) {
     
     let deps = program.args.slice(1)
         
