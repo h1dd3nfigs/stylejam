@@ -49,7 +49,7 @@ if(program.hdm) {
 
 } else if(program.demo) {
     
-    file = path.resolve('demos/sample.scss');
+    file = path.resolve(path.join(__dirname, 'demos/sample.scss'));
 
 } else {
   
