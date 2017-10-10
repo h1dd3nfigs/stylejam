@@ -43,7 +43,6 @@ button {
 	font-weight: bold;
 	border-radius: 0px;
 	display: none;
-	outline: 1px solid rgba(0, 0, 0, 0.5);
 	transition: background-color 0.3s ease-in-out;
 }
 
