@@ -545,143 +545,237 @@ td,
 th {
   padding: 0; }
 
-.palettes-stylejam-black-stylejam-base {
+#palettes-stylejam-black-stylejam-base {
   background-color: #000000; }
+  #palettes-stylejam-black-stylejam-base button:before {
+    content: "#000000"; }
 
-.palettes-stylejam-black-stylejam-translucent {
-  background-color: rgba(0, 0, 0, 0.9); }
+#palettes-stylejam-black-stylejam-tranmed {
+  background-color: rgba(0, 0, 0, 0.5); }
+  #palettes-stylejam-black-stylejam-tranmed button:before {
+    content: "rgba(0, 0, 0, 0.5)"; }
 
-.palettes-stylejam-black-stylejam-xtranslucent {
-  background-color: rgba(0, 0, 0, 0.8); }
+#palettes-stylejam-white-stylejam-base {
+  background-color: #FFFFFF; }
+  #palettes-stylejam-white-stylejam-base button:before {
+    content: "#FFFFFF"; }
 
-.palettes-stylejam-black-stylejam-xxtranslucent {
-  background-color: rgba(0, 0, 0, 0.7); }
+#palettes-stylejam-white-stylejam-tranlight {
+  background-color: rgba(255, 255, 255, 0.2); }
+  #palettes-stylejam-white-stylejam-tranlight button:before {
+    content: "rgba(255, 255, 255, 0.2)"; }
 
-.palettes-stylejam-blue-stylejam-base {
-  background-color: #63CEF5; }
-
-.palettes-stylejam-blue-stylejam-light {
-  background-color: #8edcf8; }
-
-.palettes-stylejam-blue-stylejam-medium {
-  background-color: #33bff2; }
-
-.palettes-stylejam-grey-stylejam-base {
+#palettes-stylejam-grey-stylejam-base {
   background-color: #CDCDCD; }
+  #palettes-stylejam-grey-stylejam-base button:before {
+    content: "#CDCDCD"; }
 
-.palettes-stylejam-grey-stylejam-xxxlight {
-  background-color: #fbfbfb; }
+#palettes-stylejam-grey-stylejam-xxxlight {
+  background-color: white; }
+  #palettes-stylejam-grey-stylejam-xxxlight button:before {
+    content: "white"; }
 
-.palettes-stylejam-grey-stylejam-xxlight {
-  background-color: #f6f6f6; }
+#palettes-stylejam-grey-stylejam-xxlight {
+  background-color: #f8f8f8; }
+  #palettes-stylejam-grey-stylejam-xxlight button:before {
+    content: "#f8f8f8"; }
 
-.palettes-stylejam-grey-stylejam-xlight {
+#palettes-stylejam-grey-stylejam-xlight {
+  background-color: #f3f3f3; }
+  #palettes-stylejam-grey-stylejam-xlight button:before {
+    content: "#f3f3f3"; }
+
+#palettes-stylejam-grey-stylejam-light {
+  background-color: #ececec; }
+  #palettes-stylejam-grey-stylejam-light button:before {
+    content: "#ececec"; }
+
+#palettes-stylejam-grey-stylejam-medlight {
   background-color: #e4e4e4; }
+  #palettes-stylejam-grey-stylejam-medlight button:before {
+    content: "#e4e4e4"; }
 
-.palettes-stylejam-grey-stylejam-medium {
-  background-color: silver; }
+#palettes-stylejam-grey-stylejam-medmedium {
+  background-color: #c8c8c8; }
+  #palettes-stylejam-grey-stylejam-medmedium button:before {
+    content: "#c8c8c8"; }
 
-.palettes-stylejam-grey-stylejam-xmedium {
-  background-color: #aaaaaa; }
-
-.palettes-stylejam-grey-stylejam-xxmedium {
+#palettes-stylejam-grey-stylejam-medium {
   background-color: #9f9f9f; }
+  #palettes-stylejam-grey-stylejam-medium button:before {
+    content: "#9f9f9f"; }
 
-.palettes-stylejam-grey-stylejam-dark {
+#palettes-stylejam-grey-stylejam-dark {
   background-color: #7b7b7b; }
+  #palettes-stylejam-grey-stylejam-dark button:before {
+    content: "#7b7b7b"; }
 
-.palettes-stylejam-grey-stylejam-xdark {
+#palettes-stylejam-grey-stylejam-xdark {
   background-color: #676767; }
+  #palettes-stylejam-grey-stylejam-xdark button:before {
+    content: "#676767"; }
 
-.palettes-stylejam-grey-stylejam-xxdark {
-  background-color: #343434; }
+#palettes-stylejam-grey-stylejam-xxdark {
+  background-color: #414141; }
+  #palettes-stylejam-grey-stylejam-xxdark button:before {
+    content: "#414141"; }
 
-.palettes-stylejam-grey-stylejam-xxxdark {
-  background-color: #1b1b1b; }
+#palettes-stylejam-grey-stylejam-xxxdark {
+  background-color: #2c2c2c; }
+  #palettes-stylejam-grey-stylejam-xxxdark button:before {
+    content: "#2c2c2c"; }
 
-.palettes-stylejam-orange-stylejam-base {
-  background-color: #F37026; }
+#palettes-stylejam-pink-stylejam-base {
+  background-color: #E9328C; }
+  #palettes-stylejam-pink-stylejam-base button:before {
+    content: "#E9328C"; }
 
-.palettes-stylejam-orange-stylejam-neon {
-  background-color: #e95736; }
+#palettes-stylejam-pink-stylejam-xlight {
+  background-color: #f180b8; }
+  #palettes-stylejam-pink-stylejam-xlight button:before {
+    content: "#f180b8"; }
 
-.palettes-stylejam-yellow-stylejam-base {
-  background-color: #FBE84B; }
+#palettes-stylejam-pink-stylejam-light {
+  background-color: #ef69ab; }
+  #palettes-stylejam-pink-stylejam-light button:before {
+    content: "#ef69ab"; }
 
-.palettes-stylejam-white-stylejam-base {
+#palettes-stylejam-pink-stylejam-medium {
+  background-color: #ad135e; }
+  #palettes-stylejam-pink-stylejam-medium button:before {
+    content: "#ad135e"; }
+
+#palettes-stylejam-pink-stylejam-dark {
+  background-color: #9a1154; }
+  #palettes-stylejam-pink-stylejam-dark button:before {
+    content: "#9a1154"; }
+
+#palettes-stylejam-blue-stylejam-base {
+  background-color: #00008D; }
+  #palettes-stylejam-blue-stylejam-base button:before {
+    content: "#00008D"; }
+
+#palettes-stylejam-teal-stylejam-base {
+  background-color: #01FFFF; }
+  #palettes-stylejam-teal-stylejam-base button:before {
+    content: "#01FFFF"; }
+
+#palettes-stylejam-yellow-stylejam-base {
+  background-color: #FEF035; }
+  #palettes-stylejam-yellow-stylejam-base button:before {
+    content: "#FEF035"; }
+
+#palettes-stylejam-yellow-stylejam-tranmed {
+  background-color: rgba(254, 240, 53, 0.95); }
+  #palettes-stylejam-yellow-stylejam-tranmed button:before {
+    content: "rgba(254, 240, 53, 0.95)"; }
+
+#palettes-stylejam-purple-stylejam-base {
+  background-color: #FD4CFC; }
+  #palettes-stylejam-purple-stylejam-base button:before {
+    content: "#FD4CFC"; }
+
+#palettes-stylejam-green-stylejam-base {
+  background-color: #35B763; }
+  #palettes-stylejam-green-stylejam-base button:before {
+    content: "#35B763"; }
+
+#palettes-stylejam-red-stylejam-base {
+  background-color: #FF4C49; }
+  #palettes-stylejam-red-stylejam-base button:before {
+    content: "#FF4C49"; }
+
+#color-bg-nav-stylejam-color {
   background-color: #FFFFFF; }
+  #color-bg-nav-stylejam-color button:before {
+    content: "#FFFFFF"; }
 
-.palettes-stylejam-white-stylejam-translucent {
-  background-color: rgba(255, 255, 255, 0.5); }
+#color-bg-sidepanel-stylejam-color {
+  background-color: transparent; }
+  #color-bg-sidepanel-stylejam-color button:before {
+    content: "transparent"; }
 
-.color-bg-footer-stylejam-color {
-  background-color: #1b1b1b; }
+#color-bg-sidepanel-submenu-stylejam-color {
+  background-color: transparent; }
+  #color-bg-sidepanel-submenu-stylejam-color button:before {
+    content: "transparent"; }
 
-.color-base-yellow {
-  background-color: #FBE84B; }
+#color-bg-search-overlay-stylejam-color {
+  background-color: rgba(0, 0, 0, 0.9); }
+  #color-bg-search-overlay-stylejam-color button:before {
+    content: "rgba(0, 0, 0, 0.9)"; }
 
-.color-base-orange {
-  background-color: #F37026; }
-
-.color-base-blue {
-  background-color: #63CEF5; }
-
-.color-base-grey {
-  background-color: #CDCDCD; }
-
-.color-text-headline {
-  background-color: #1b1b1b; }
-
-.color-nav-sponsor-svg-logo {
-  background-color: #000000; }
-
-.youtube-playlist-arrow-button-bg {
-  background-color: #FBE84B; }
-
-.youtube-playlist-arrow-button-bg-hover {
-  background-color: rgba(251, 232, 75, 0.75); }
-
-.youtube-playlist-arrow-color {
+#color-bg-footer-stylejam-color {
   background-color: #FFFFFF; }
+  #color-bg-footer-stylejam-color button:before {
+    content: "#FFFFFF"; }
 
-.color-bg-clickable-image-button {
-  background-color: #63CEF5; }
+#quiz-background-stylejam-color {
+  background-color: #f8f8f8; }
+  #quiz-background-stylejam-color button:before {
+    content: "#f8f8f8"; }
 
-.color-bg-hover-clickable-image-button {
-  background-color: #8edcf8; }
+#gallery-button-background-stylejam-color {
+  background-color: #E9328C; }
+  #gallery-button-background-stylejam-color button:before {
+    content: "#E9328C"; }
 
-.color-bg-newsletter-inner {
-  background-color: #000000; }
+#color-base-pink {
+  background-color: #E9328C; }
+  #color-base-pink button:before {
+    content: "#E9328C"; }
 
-.color-bg-collection-breaker-header {
-  background-color: #f6f6f6; }
+#color-bg-lazy {
+  background-color: #f3f3f3; }
+  #color-bg-lazy button:before {
+    content: "#f3f3f3"; }
 
-.color-bg-collection-breaker-title {
-  background-color: #343434; }
+#color-bg-newsletter-outer {
+  background-color: transparent; }
+  #color-bg-newsletter-outer button:before {
+    content: "transparent"; }
 
-.border-listing-seperate {
-  border: 0.3125rem solid #f6f6f6; }
+#color-embed-rating-icon {
+  background-color: #E9328C; }
+  #color-embed-rating-icon button:before {
+    content: "#E9328C"; }
 
-.border-solid-grey-thin {
-  border: 0.1875rem solid #f6f6f6; }
+#youtube-playlist-arrow-button-bg {
+  background-color: #E9328C; }
+  #youtube-playlist-arrow-button-bg button:before {
+    content: "#E9328C"; }
 
-.border-solid-light {
-  border: 0.1875rem solid #e4e4e4; }
+#youtube-playlist-arrow-button-bg-hover {
+  background-color: rgba(233, 50, 140, 0.75); }
+  #youtube-playlist-arrow-button-bg-hover button:before {
+    content: "rgba(233, 50, 140, 0.75)"; }
 
-.border-solid-medium {
-  border: 0.1875rem solid #CDCDCD; }
+#youtube-playlist-arrow-color {
+  background-color: #FFFFFF; }
+  #youtube-playlist-arrow-color button:before {
+    content: "#FFFFFF"; }
 
-.border-solid-dark {
-  border: 0.1875rem solid #343434; }
+#color-bg-sponsor-gallery {
+  background-color: #f8f8f8; }
+  #color-bg-sponsor-gallery button:before {
+    content: "#f8f8f8"; }
 
-.border-solid-red {
-  border: 0.1875rem solid #FBE84B; }
+#color-valid {
+  background-color: #35B763; }
+  #color-valid button:before {
+    content: "#35B763"; }
 
-.border-solid-light-demi {
-  border: 0.625rem solid #e4e4e4; }
+#color-error {
+  background-color: #FF4C49; }
+  #color-error button:before {
+    content: "#FF4C49"; }
 
-.border-solid-light-heavy {
-  border: 1.25rem solid #e4e4e4; }
+#border-related-content {
+  border: 0.0625rem dotted #e4e4e4; }
+  #border-related-content button:before {
+    content: "0.0625rem dotted #e4e4e4"; }
 
-.border-newsletter {
-  border: 0.1875rem solid #63CEF5; }
+#border-thin-black {
+  border: 0.1875rem solid #000000; }
+  #border-thin-black button:before {
+    content: "0.1875rem solid #000000"; }

@@ -1,16 +1,10 @@
 'use strict'
 
 let fs = require('fs')
+
 let path = require('path')
 
-const _ = require('lodash')
-
-let express = require("express");
-let app = express();
-let port = process.env.PORT || 8080;
-
-
-app.use(express.static('public'));
+let _ = require('lodash')
 
 module.exports = (mapVars, colorVars, borderVars, deps) => {
 
@@ -28,6 +22,10 @@ module.exports = (mapVars, colorVars, borderVars, deps) => {
 	@if (type-of(${mapVars[value]}) == color) {
 		${value} {
 	  	background-color: ${mapVars[value]};
+
+	  	button:before {
+	  		content: quote(${mapVars[value]});
+	  	}
 	  }
 	}
 
@@ -43,6 +41,10 @@ module.exports = (mapVars, colorVars, borderVars, deps) => {
 	`@if (type-of(${colorVars[value]}) == color) {
 		${value} {
 	  	background-color: ${colorVars[value]};
+
+	  	button:before {
+	  		content: quote(${colorVars[value]});
+	  	}
 	  }
 	}
 
@@ -78,7 +80,11 @@ module.exports = (mapVars, colorVars, borderVars, deps) => {
 			scssString +=
 	`@if bordercolor(${borderVars[value]}) and borderwidth(${borderVars[value]}) {
 	  ${value} {
-	  	border: ${borderVars[value]}
+	  	border: ${borderVars[value]};
+
+	  	button:before {
+	  		content: quote(${borderVars[value]});
+	  	}
 	  }
 	}
 

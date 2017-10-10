@@ -1,32 +1,27 @@
 #!/usr/bin/env node
  
-/**
- * Module dependencies.
- */
- 
 let fs = require('fs')
-let path = require('path')
-let program = require('commander')
-let util = require('util')
-let sass = require('node-sass')
-const _ = require('lodash')
-let express = require("express");
 
-let { parse, stringify } = require('scss-parser')
+let path = require('path')
+
+let program = require('commander')
+
+let util = require('util')
+
+let sass = require('node-sass')
+
+let _ = require('lodash')
+
+let { parse, stringify } = require('scss-parser') 
+
 let createQueryWrapper = require('./query-ast')
 
-let writeStyles = require('./index.js')
+let writeStyles = require('./scss-template.js')
+
 let handlebars = require('handlebars')
 
-
-let app = express();
-let port = process.env.PORT || 8080;
 let open = require('open')
 
-// ~/carron-dev/media-platform/fre-hdm/sites/cosmopolitan/assets/scss/_variables.scss
-// ~/carron-dev/media-platform/mp-bower-assets/scss/_utils.scss
-// ~/carron-dev/media-platform/fre-hdm/assets/scss/_variables.scss
-// webjam ~/carron-dev/media-platform/fre-hdm/sites/cosmopolitan/assets/scss/_variables.scss ~/carron-dev/media-platform/mp-bower-assets/scss/_utils.scss ~/carron-dev/media-platform/mp-bower-assets/scss/_system.scss ~/carron-dev/media-platform/fre-hdm/assets/scss/_variables.scss
 // 
 /**
  * Hello, CLI.

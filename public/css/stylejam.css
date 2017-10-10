@@ -4,12 +4,16 @@ section {
 
 h1 {
 	padding-bottom: 10px !important;
-	border-bottom: solid 1px;
+	border-bottom: solid 2px black;
+}
+
+h4 {
+	margin-left: 20px;
 }
 
 .stylejam-tile-container {
 	width: 100px;
-	margin: 5px;
+	margin-left: 10px;
 	display: inline-block;
 }
 
@@ -18,7 +22,50 @@ h1 {
 	height: 100px;
 }
 
+.maps .stylejam-tile, .colors .stylejam-tile {
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+}
+
+.map, .color, .border {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.map:hover button, .color:hover button, .border:hover button {
+	display: block;
+}
+
+button {
+	border: 0;
+	background: rgba(0, 0, 0, 0.5);
+	font-size: 11px;
+	font-weight: bold;
+	border-radius: 0px;
+	display: none;
+	outline: 1px solid rgba(0, 0, 0, 0.5);
+	transition: outline-color 0.3s ease-in-out;
+}
+
+button:hover {
+	outline-color: white;
+}
+
+.map button:before, .color button:before, .border button:before {
+	color: white;
+	padding: 7px 8px 5px;
+	font-size: 11px;
+	font-weight: bold;
+	border-radius: 0px;
+	text-align: center;
+}
+
 .stylejam-variable-name {
 	font-size: 12px;
 	text-align: center;
+}
+
+.stylejam-section-container {
+	display: flex;
+	flex-wrap: wrap;
 }

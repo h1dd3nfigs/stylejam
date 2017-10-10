@@ -8,32 +8,67 @@
     <title>title</title>
   </head>
   <body>
+  	<h4>Click to copy values to clipboard</h4>
   	<section class="maps">
   		<h1>Mapped Colors</h1>
-  		{{#each maps}}
-  			<div class="stylejam-tile-container">
-  				<div class="stylejam-tile {{@key}}"></div>
-  				<p class="stylejam-variable-name">{{append @key}}</p>
-  			</div>
-  		{{/each}}
+  		<div class="stylejam-section-container">
+  			{{#each maps}}
+  				<div class="stylejam-tile-container">
+  					<div class="map stylejam-tile" id="{{@key}}">
+  						<button class="btn"></button>
+  					</div>
+  					<p class="stylejam-variable-name">{{append @key}}</p>
+  				</div>
+  			{{/each}}
+  		</div>
   	</section>
   	<section class="colors">
   	<h1>Colors</h1>
-  		{{#each colors}}
-  			<div class="stylejam-tile-container">
-  				<div class="stylejam-tile {{@key}}"></div>
-  				<p class="stylejam-variable-name">{{prepend @key}}</p>
-  			</div>
-  		{{/each}}
+  		<div class="stylejam-section-container">
+	  		{{#each colors}}
+	  			<div class="stylejam-tile-container">
+	  				<div class="color stylejam-tile" id="{{@key}}">
+	  					<button class="btn"></button>
+	  				</div>
+	  				<p class="stylejam-variable-name">{{prepend @key}}</p>
+	  			</div>
+	  		{{/each}}
+  		</div>
   	</section>
   	<section class="borders">
   	<h1>Borders</h1>
-  		{{#each borders}}
-  			<div class="stylejam-tile-container">
-  				<div class="stylejam-tile {{@key}}"></div>
-  				<p class="stylejam-variable-name">{{prepend @key}}</p>
-  			</div>
+  	<div class="stylejam-section-container">
+	  	{{#each borders}}
+				<div class="stylejam-tile-container">
+	  				<div class="border stylejam-tile" id="{{@key}}">
+	  					<button class="btn"></button>
+	  				</div>
+					<p class="stylejam-variable-name">{{prepend @key}}</p>
+				</div>
   		{{/each}}
+  		</div>
   	</section>
   </body>
+  <script src="js/clipboard.min.js"></script>
+  <script>
+  	var attr = '';
+
+  	var nodelist = document.querySelectorAll('.btn');
+
+		var buttons = Array.from(nodelist);
+
+  	buttons.forEach(function(button, idx) {
+
+  		attr = window.getComputedStyle(
+  		button, ':before'
+  		).getPropertyValue('content');
+
+  		document.createAttribute('data-clipboard-text').value = attr;
+
+  		buttons[idx].setAttribute('data-clipboard-text', attr.replace(/"/g,""))
+  	});
+
+  	new Clipboard('.btn');
+  	
+  </script>
 </html>
