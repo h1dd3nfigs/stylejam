@@ -1,7 +1,7 @@
 {
   "name": "stylejam",
   "version": "1.0.3",
-  "description": "Simple Sass styleguides effortlessly",
+  "description": "Basic Sass styleguides effortlessly",
   "main": "",
   "bin": "console.js",
   "scripts": {
