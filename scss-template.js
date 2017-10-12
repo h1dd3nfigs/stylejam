@@ -18,21 +18,40 @@ module.exports = (mapVars, colorVars, borderVars, deps) => {
 			})
 		}
 		
+		scssString += 
+
+		`
+		@function get-content($inputs...) {
+  		@if(length($inputs) == 1) {
+    @return quote(inspect(nth($inputs, 1)))
+  		} @else {
+    		@return ''
+  		}
+		}	
+
+		@function color-test($inputs...) {
+		  @if length($inputs) == 1 and type-of(nth($inputs, 1)) == color {
+		    @return true;
+		  }
+		  @return false;
+		}
+		`
 		for (let value in mapVars) {
 			scssString +=
-	`
-	@if (type-of(${mapVars[value]}) == color) {
-		${value} {
-	  	background-color: ${mapVars[value]};
+		
+		`
+		@if (color-test(${mapVars[value]})) {
+			${value} {
+	  		background-color: ${mapVars[value]};
 
-	  	button:before {
-	  		content: quote(${mapVars[value]});
+	  		button:before {
+	  			content: get-content(${mapVars[value]});
+	  		}
 	  	}
-	  }
-	}
-
-	`
 		}
+		`
+		}
+
 		colorRules()	
 	}
 
@@ -40,17 +59,18 @@ module.exports = (mapVars, colorVars, borderVars, deps) => {
 		
 		for (let value in colorVars) {
 			scssString +=
-	`@if (type-of(${colorVars[value]}) == color) {
-		${value} {
-	  	background-color: ${colorVars[value]};
+			`
+			@if (color-test(${colorVars[value]})) {
+				${value} {
+			  	background-color: ${colorVars[value]};
 
-	  	button:before {
-	  		content: quote(${colorVars[value]});
-	  	}
-	  }
-	}
+			  	button:before {
+			  		content: get-content(${colorVars[value]});
+			  	}
+			  }
+			}
 
-	`
+			`
 		}	
 
 		borderRules()
@@ -58,40 +78,40 @@ module.exports = (mapVars, colorVars, borderVars, deps) => {
 
 	let borderRules = () => {
 		scssString += 
-	`@function borderwidth($input) {
-	  @each $part in $input {
-	    @if type-of($part) == number {
-	      @return true;
-	    }
-	  }
-	  @return false;
-	}
+		`@function borderwidth($input) {
+		  @each $part in $input {
+		    @if type-of($part) == number {
+		      @return true;
+		    }
+		  }
+		  @return false;
+		}
 
-	@function bordercolor($input) {
-	  @each $part in $input {
-	    @if type-of($part) == color {
-	      @return true;
-	    }
-	  }
-	  @return false;
-	}
+		@function bordercolor($input) {
+		  @each $part in $input {
+		    @if type-of($part) == color {
+		      @return true;
+		    }
+		  }
+		  @return false;
+		}
 
-	`
+		`
 
 		for (let value in borderVars) {
 			
 			scssString +=
-	`@if bordercolor(${borderVars[value]}) and borderwidth(${borderVars[value]}) {
-	  ${value} {
-	  	border: ${borderVars[value]};
+			`@if bordercolor(${borderVars[value]}) and borderwidth(${borderVars[value]}) {
+			  ${value} {
+			  	border: ${borderVars[value]};
 
-	  	button:before {
-	  		content: quote(${borderVars[value]});
-	  	}
-	  }
-	}
+			  	button:before {
+			  		content: get-content(${borderVars[value]});
+			  	}
+			  }
+			}
 
-	`
+			`
 		}
 
 		fs.writeFile(path.join(__dirname, 'demos/styles.scss'), scssString, function(err) {
