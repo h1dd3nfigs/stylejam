@@ -31,6 +31,7 @@ program
     .version(require('./package.json').version)
     .usage('[options] <file>')
     .option('-m, --hdm', 'HDM file shortcuts')
+    .option('-e, --edit', 'HDM Edit UI file shortcuts')
     .option('-d --demo', 'Display demo of sample scss variable file')
     .option('-b, --bench', 'measure and output timing data')
     .parse(process.argv);
@@ -46,6 +47,10 @@ let file = ''
 if(program.hdm) {
     
     file = path.resolve(`${program.args[0]}/media-platform/fre-hdm/sites/${program.args[1]}/assets/scss/_variables.scss`)
+
+} else if(program.edit) {
+
+    file = path.resolve(`${program.args[0]}/media-platform/edit/assets/scss/_constants.scss`) 
 
 } else if(program.demo) {
     
@@ -103,6 +108,16 @@ if(program.hdm) {
         path.resolve(`${program.args[0]}/media-platform/mp-bower-assets/scss/_system.scss`),
         path.resolve(`${program.args[0]}/media-platform/fre-hdm/assets/scss/_variables.scss`),
         path.resolve(`${program.args[0]}/media-platform/fre-hdm/sites/${program.args[1]}/assets/scss/_variables.scss`)
+    ]
+
+    } else if(program.edit) {
+
+    deps = [
+        path.resolve(`${program.args[0]}/media-platform/mp-bower-assets/scss/_utils.scss`),
+        path.resolve(`${program.args[0]}/media-platform/mp-bower-assets/scss/_system.scss`),
+        path.resolve(`${program.args[0]}/media-platform/mp-bower-assets/scss/_animations.scss`),
+        path.resolve(`${program.args[0]}/media-platform/mp-bower-assets/scss/_breakpoint-events.scss`),
+        path.resolve(`${program.args[0]}/media-platform/edit/assets/scss/_constants.scss`)   
     ]
 
 } else if(program.demo) {
