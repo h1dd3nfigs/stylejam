@@ -223,6 +223,9 @@ module.exports = (ast, options) => {
 
     maps() {
 
+      // Eff up some comments
+      $('comment_singleline').remove()
+
       let firstarray = $()
         .find('value')
         .hasParents( 'parentheses' )
@@ -255,7 +258,7 @@ module.exports = (ast, options) => {
 
         if ((!_.isEqual(current, _.last(mapValues))) 
           && (!_.every(current, _.isEmpty))) mapValues.push(current) 
-
+        
         firstarray = firstarray.map((n) => {
           return NodeWrapper.isNodeWrapper(n) ? n.parent : undefined
         })
