@@ -180,12 +180,12 @@ fs.readFile(path.join(__dirname, 'demos/styles.scss'), 'utf8', (err, contents) =
  * Parse into an AST!
  */
 if(program.bench) {
-    console.time('StyleJam');
+    console.time('stylejam');
 }
 
 
 if(program.bench) {
-    console.timeEnd('StyleJam');
+    console.timeEnd('stylejam');
 }
 
 
