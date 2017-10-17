@@ -5,11 +5,15 @@
  - Provide scss variable file along with imported/dependency files
  - No need to change your Sass or add markdown/notation
 
+## Example:
+<img src="https://raw.githubusercontent.com/bcrebel/stylejam/master/demos/sample.png">
+
+
 ## Install
 
 ```
 
-	npm install -g stylejam
+	npm install -g stylejam      
 
 ```
 
@@ -17,17 +21,17 @@
 
 ```
 
-	stylejam -d
+	stylejam -d      
 
 ```
 
-### To generate a styleguide from any scss file: 
+### To generate a styleguide from any scss file:  
 
 ```
 
-	Add variable file followed by any dependency files in order of import 
+	Add variable file followed by any dependency files in order of import      
 
-	stylejam <path/to/variable-file.scss> [<path/to/dependency.scss>]
+	stylejam <path/to/variable-file.scss> [<path/to/dependency.scss>]     
 
 ```
 
@@ -37,14 +41,14 @@
 
 ```
 
-	stylejam -m ~/yourmedia-platform-parent-directory elledecor
+	stylejam -m ~/yourmedia-platform-parent-directory elledecor     
 
 ```
 
 #### EDIT
 ```
 
-	stylejam -e ~/yourmedia-platform-parent-directory
+	stylejam -e ~/yourmedia-platform-parent-directory     
 
 ```
 
