@@ -22,10 +22,10 @@ module.exports = (mapVars, colorVars, borderVars, deps) => {
 
 		`
 		@function get-content($inputs...) {
-  		@if(length($inputs) == 1) {
-    @return quote(inspect(nth($inputs, 1)))
+			@if(length($inputs) == 1) {
+				@return quote(inspect(nth($inputs, 1)))
   		} @else {
-    		@return ''
+  			@return ''
   		}
 		}	
 
@@ -35,6 +35,7 @@ module.exports = (mapVars, colorVars, borderVars, deps) => {
 		  }
 		  @return false;
 		}
+
 		`
 		for (let value in mapVars) {
 			scssString +=
