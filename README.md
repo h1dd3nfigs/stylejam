@@ -9,7 +9,7 @@
 
 ```
 
-npm install -g stylejam
+	npm install -g stylejam
 
 ```
 
@@ -17,7 +17,7 @@ npm install -g stylejam
 
 ```
 
-stylejam -d
+	stylejam -d
 
 ```
 
@@ -25,9 +25,9 @@ stylejam -d
 
 ```
 
-Add variable file followed by any dependency files in order of import 
+	Add variable file followed by any dependency files in order of import 
 
-stylejam <path/to/variable-file.scss> [<path/to/dependency.scss>]
+	stylejam <path/to/variable-file.scss> [<path/to/dependency.scss>]
 
 ```
 
@@ -37,14 +37,14 @@ stylejam <path/to/variable-file.scss> [<path/to/dependency.scss>]
 
 ```
 
-stylejam -m ~/yourmedia-platform-parent-directory elledecor
+	stylejam -m ~/yourmedia-platform-parent-directory elledecor
 
 ```
 
 #### EDIT
 ```
 
-stylejam -e ~/yourmedia-platform-parent-directory
+	stylejam -e ~/yourmedia-platform-parent-directory
 
 ```
 
